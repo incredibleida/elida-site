@@ -73,7 +73,7 @@
   // Hero: the covers orbit Socrates on a tilted ring — smaller and behind him at the back, larger in front.
   // Hovering a cover eases the ring to a stop; the whole ring drifts with the cursor and lifts away on scroll.
   var hero = document.querySelector('[data-hero]'), cards = Array.prototype.slice.call(document.querySelectorAll('.fc')), statueBox = document.querySelector('[data-statue-box]');
-  var mx = 0, my = 0, tmx = 0, tmy = 0, theta = -Math.PI / 2 + 0.4, omega = 2 * Math.PI / 44000, speed = 1, tSpeed = 1, lastHero = 0;
+  var heroGrid = false, mx = 0, my = 0, tmx = 0, tmy = 0, theta = -Math.PI / 2 + 0.4, omega = 2 * Math.PI / 44000, speed = 1, tSpeed = 1, lastHero = 0;
   if (hero && canHover) addEventListener('mousemove', function (e) { tmx = e.clientX / innerWidth * 2 - 1; tmy = e.clientY / innerHeight * 2 - 1; }, { passive: true });
   cards.forEach(function (c) { c.addEventListener('mouseenter', function () { tSpeed = 0; }); c.addEventListener('mouseleave', function () { tSpeed = 1; }); });
   function heroStep(now) {
@@ -84,6 +84,13 @@
     if (!reduce) theta += omega * dt * speed;
     mx += (tmx - mx) * 0.06; my += (tmy - my) * 0.06;
     var narrow = W < 900, m = reduce ? 0 : 1;
+    // On phones the covers are a static grid at the foot of the hero, so the ring is skipped and any inline transform cleared.
+    if (narrow) {
+      if (!heroGrid) { heroGrid = true; cards.forEach(function (c) { c.style.transform = ''; c.style.zIndex = ''; }); }
+      if (statueBox) statueBox.style.transform = '';
+      return;
+    }
+    heroGrid = false;
     var cx = W / 2 + mx * 18 * m, cy = H * (narrow ? 0.64 : 0.62) + my * 12 * m;
     var a = narrow ? Math.min(W * 0.36, W / 2 - 40 - parseFloat(getComputedStyle(cards[0]).width) * 0.6) : Math.min(W * 0.4, H * 0.8), b = H * (narrow ? 0.2 : 0.21), n = cards.length;
     for (var i = 0; i < n; i++) {
@@ -93,6 +100,18 @@
     }
     if (statueBox) statueBox.style.transform = 'translate3d(0,' + (y * 0.12 * m).toFixed(1) + 'px,0)';
   }
+
+  // Phone layout moves two blocks out of their desktop slots: the hero's "Selected work" pill drops below the statue, and a case page's project overview goes above "Next project".
+  var phone = matchMedia('(max-width: 900px)');
+  function placeForWidth() {
+    var small = phone.matches;
+    var cta = document.querySelector('[data-hero-cta]'), sub = document.querySelector('.hero-sub'), ring = document.querySelector('[data-ring]');
+    if (cta && ring && sub) { if (small) { if (cta.parentNode !== hero) hero.insertBefore(cta, ring); } else if (cta.parentNode !== sub) sub.appendChild(cta); }
+    var th = document.querySelector('.case-thumbs'), next = document.querySelector('.case-next'), head = document.querySelector('.case-head .wrap'), main = next && next.parentNode;
+    if (th && next && head) { if (small) { if (th.parentNode !== main) main.insertBefore(th, next); } else if (th.parentNode !== head) head.appendChild(th); }
+  }
+  placeForWidth();
+  if (phone.addEventListener) phone.addEventListener('change', placeForWidth);
 
   // Selected work: hovering a title's letters floats that project's cover beside the cursor; it follows the cursor and leaves with it.
   var wk = document.querySelector('[data-wk]'), prev = document.querySelector('[data-prev]');

@@ -176,9 +176,9 @@ img { max-width: 100%; }
 .crew-bio p + p { margin-top: 1.6em; }
 
 /* "Click into any project to learn more!" — pinned by the Selected work label (Figma "Selected work note") */
-.sec-head { position: relative; }
+.sec-head { position: relative; container-type: inline-size; }
 .sec-head.has-note { margin-bottom: clamp(72px, 9.7vw, 186px); }
-.hand-note { position: absolute; left: 62.56%; top: -.5em; width: 46.58%; margin: 0; font-family: "Nothing You Could Do", var(--sans); font-size: clamp(22px, 2.34vw, 45px); line-height: 1; letter-spacing: .16em; color: var(--paper); transform: rotate(-5.86deg); transform-origin: 0 0; pointer-events: none; }
+.hand-note { position: absolute; right: 0; top: -.2em; width: min(46.58%, 745px); margin: 0; font-family: "Nothing You Could Do", var(--sans); font-size: clamp(22px, 2.81cqw, 45px); line-height: 1; letter-spacing: .16em; color: var(--paper); transform: rotate(-5.86deg); transform-origin: 100% 0; pointer-events: none; }
 .hand-line { position: absolute; left: 14.66%; top: 1.74em; width: 40.75%; height: auto; color: var(--paper); transform: rotate(10.11deg); }
 .js .hand-note .hand-line { clip-path: inset(0 100% 0 0); transition: clip-path 1.1s var(--ease) .5s; }
 .js .sec-head.in .hand-note .hand-line { clip-path: inset(0); }
@@ -335,40 +335,64 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: flex; }
   .nav { padding: 0 36px; }
-  .hero-top { top: 96px; left: 36px; right: 36px; }
+  /* Hero stacks: title, Socrates, the pill, then the eight covers as a static 4 × 2 grid at the foot */
+  .hero { display: flex; flex-direction: column; padding-top: clamp(84px, 13vh, 124px); }
+  .hero-top { position: static; left: auto; right: auto; top: auto; padding: 0 36px; }
   .hero-h1 { flex-direction: column; align-items: flex-start; gap: 0; font-size: clamp(46px, 12vw, 80px); }
-  .hero-sub { flex-wrap: wrap; gap: 12px; }
-  .statue-box { --sh: min(58vh, 105vw, 520px); }
-  .fc { width: clamp(60px, 17vw, 84px); }
+  .hero-sub { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 14px; }
+  .statue-box { position: relative; left: auto; bottom: auto; flex: 1 1 auto; width: 100%; min-height: min(52svh, 96vw); height: auto; margin: 0; }
+  .hero > .hero-cta { align-self: flex-end; padding: 0 20px 18px; }
+  .fc-layer { position: relative; inset: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 0 20px 20px; pointer-events: auto; }
+  .fc { position: static; width: auto; }
+  .fc-card { box-shadow: none; }
+  .fc-info { display: none; }
+  /* The manifesto runs down the middle: heading, walking figure, the question, the chessboard, then the buttons */
+  .mani-stage { justify-items: center; text-align: center; }
+  .mani-h2 { order: 1; align-self: start; justify-self: stretch; text-align: left; }
+  .mani-cta { display: contents; }
+  /* Both gif canvases are square with the drawing centred, so on a phone they show whole and centred */
+  .gif { background-size: contain; background-position: center; }
+  .gif-greek { order: 2; width: 91%; justify-self: center; margin: 28px 0 0; }
+  .mani-q { order: 3; width: 100%; margin: 30px 0 0; font-size: clamp(30px, 8vw, 48px); text-align: center; }
+  /* Full width plus a crop of the empty canvas edge, so the board reads as big as the figure */
+  .gif-chess { order: 4; width: 100%; justify-self: center; margin: 18px 0 0; background-size: 125%; }
+  /* Pulled up: the chessboard canvas carries ~100px of empty space under the drawing */
+  .mani-cta .cta-row { order: 5; justify-content: center; margin-top: -22px; }
+  /* Selected work sits on the grained gradient */
+  .work::before { background: url(work-texture.webp) center / cover no-repeat; transform: none; }
   .sec-head { flex-direction: column; align-items: flex-start; }
   .mani-stage { aspect-ratio: auto; display: grid; grid-template-columns: minmax(0, 1fr); padding: 96px var(--gut) 88px; }
   .mani-h2 { position: static; width: auto; font-size: clamp(40px, 12vw, 64px); }
   .gif { position: static; aspect-ratio: 1; height: auto; }
-  .gif-greek { width: 78%; justify-self: end; margin-top: 8px; }
-  .gif-chess { width: 78%; justify-self: start; margin-top: 0; }
-  .mani-cta { position: static; width: auto; justify-self: end; margin-top: 24px; }
   .mani-q { white-space: normal; }
-  .wk-a { grid-template-columns: 56px minmax(0, 1fr) 44px; grid-template-areas: "th name ar" "th tags ar"; align-items: center; row-gap: 10px; padding: 20px 0; }
+  .wk-a { grid-template-columns: 64px minmax(0, 1fr) 44px; grid-template-areas: "th name ar" "th tags ar"; align-items: center; row-gap: 10px; padding: 20px 0; }
   .wk-num { display: none; }
   .wk-thumb { display: block; }
   .wk-tags { justify-content: flex-start; }
   .wk-arrow { --cw: 44px; }
   .wk-prev { display: none; }
   .crew-photo { aspect-ratio: 4 / 3; }
-  .crew-bio { width: 92%; margin: -10% 0 0 auto; padding: 28px 24px 30px 28px; }
+  .crew-bio { width: 90%; margin: -16% auto 0 0; padding: 26px 24px 30px; }
+  .crew-bio p { font-family: "Fira Mono", ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.75; }
+  .crew-bio p + p { margin-top: 1.75em; }
   .crew-sig-e { left: 8%; width: 28%; }
   .crew-sig-i { left: 64%; width: 24%; }
   .sec-head.has-note { margin-bottom: clamp(48px, 6vw, 96px); }
-  .hand-note { position: static; width: auto; margin: 18px 0 0; transform: rotate(-3deg); }
-  .hand-line { display: none; }
-  .case-right, .case-credits { align-items: flex-start; text-align: left; }
+  /* Two lines, the underline beneath them */
+  .hand-note { position: static; width: auto; max-width: none; margin: 20px 0 0; font-size: clamp(17px, 5.3vw, 26px); line-height: 1.16; transform: rotate(-2deg); transform-origin: 0 0; }
+  .hand-line { left: 18%; top: 2.5em; width: 58%; }
+  /* Case head order on a phone: title, tags, description, credits in two columns */
+  .case-right { display: contents; }
+  .case-tags { order: -1; }
+  .case-credits { order: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; text-align: left; }
   .hand-label, .panel, .mock.wide { grid-column: 1 / -1; }
   .hand-label { position: static; transform: none; padding: 8px 0 0; }
   .tilt { transform: none; }
   .fox { padding: 0 6%; }
   .case-head .wrap { display: block; }
   .case-intro { grid-template-columns: minmax(0, 1fr); }
-  .case-thumbs { width: 100%; margin-top: clamp(28px, 5vw, 44px); }
+  /* The project overview moves down to just above "Next project" */
+  .case-thumbs { width: auto; margin: clamp(40px, 8vw, 64px) var(--gut) 0; }
   .case-tags { justify-content: flex-start; padding-top: 0; }
   .case-cover:not(.video) { aspect-ratio: 4 / 3; }
   .cover-logo { width: calc(var(--lw, 30%) * 1.7); }
@@ -377,9 +401,14 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .mock { position: static; width: auto; }
   .mock-group { position: relative; left: auto; top: auto; width: auto; }
   .mock.m-rise, .flyer, .mock-group { grid-column: 1 / -1; }
-  .mock.m-slide { width: 70%; justify-self: center; }
+  .mock.m-slide { grid-column: 1 / -1; width: 86%; justify-self: center; }
+  /* The panel must be its own positioning context on a phone, or the screenshot inside escapes it */
+  .panel { position: relative; left: auto; top: auto; }
   .cpart { position: absolute; width: var(--w); }
-  .igc { position: relative; }
+  /* On a phone the whole carousel composition is shown centred, rather than sliding the posts out from behind the phone */
+  .igc { position: static; grid-column: 1 / -1; justify-self: stretch; width: auto; margin: 0; }
+  .igc > img { clip-path: none; width: 100%; }
+  .igc-slide { display: none; }
   .wed { --wh: min(88vh, 150vw); }
   .wed-scroll { cursor: auto; }
   .flyer-under:hover, .flyer-over:hover { transform: none; }
