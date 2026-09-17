@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!--
+  © 2026 Österman & Næss (Elida). All rights reserved.
+  Design, code, copy, illustrations, photography and 3D content on this site are protected by copyright.
+  No part may be copied, reproduced or reused without written permission. See /LICENSE.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PREVIEW ONLY: remove this line at launch -->
+<meta name="robots" content="noindex">
+<title>Elida — Become who you are</title>
+<meta name="copyright" content="© 2026 Österman & Næss (Elida). All rights reserved.">
+<meta name="description" content="Elida — a design studio. Strategic communication, brand identity, illustration and motion.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:wght@400;500;700&family=Lexend+Zetta:wght@400;500&family=Fira+Mono&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.className += " js";</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<header class="nav" data-nav>
+  <a class="nav-logo" href="#top" aria-label="Elida — home"><svg class="logo" viewBox="0 0 1941.08 731.659" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M 690.145 148.308 L 642.807 148.308 L 642.807 731.49 L 690.145 731.49 L 690.145 148.308 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 1238.158 302.131 C 1191.491 231.252 1113.936 184.793 1026.322 184.793 C 883.993 184.793 768.173 307.349 768.173 457.955 C 768.173 608.561 883.993 731.117 1026.322 731.117 C 1113.975 731.117 1191.491 684.616 1238.158 613.779 L 1238.158 731.492 L 1285.496 731.492 L 1285.496 0 L 1238.158 0 L 1238.158 302.131 Z M 1026.282 681.026 C 910.029 681.026 815.472 580.97 815.472 457.955 C 815.472 334.94 910.029 234.884 1026.282 234.884 C 1142.536 234.884 1237.093 334.94 1237.093 457.955 C 1237.093 580.97 1142.536 681.026 1026.282 681.026 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 502.766 475.278 C 502.49 476.614 502.293 477.95 502.174 479.244 C 499.729 504.205 494.364 528.416 485.251 551.75 C 476.967 572.997 465.567 592.783 451.602 610.356 C 437.677 627.888 421.227 643.166 403.12 655.688 C 384.501 668.587 364.145 678.605 342.922 685.618 C 320.634 693.006 297.439 697.097 274.125 698.057 C 270.496 698.224 266.866 698.266 263.277 698.266 C 216.965 698.266 167.852 673.596 130.494 631.394 L 457.401 285.851 L 450.971 278.713 C 402.765 223.363 334.362 191.597 263.237 191.597 C 122.486 191.597 8.008 312.733 8.008 461.628 C 8.008 537.14 37.476 605.514 84.853 654.603 C 84.853 654.603 79.567 661.115 69.981 670.173 C 51.519 684.825 28.127 679.565 28.127 679.565 C 27.022 679.44 25.917 679.315 24.734 679.315 C 11.085 679.315 0 691.044 0 705.487 C 0 719.93 11.085 731.659 24.734 731.659 C 27.377 731.659 29.941 731.2 32.308 730.407 C 32.624 730.324 32.9 730.157 33.215 730.073 C 33.768 729.864 34.32 729.656 34.833 729.405 C 36.726 728.529 38.541 727.36 40.198 725.941 C 40.434 725.732 40.671 725.523 40.908 725.273 C 41.263 724.939 41.657 724.647 41.973 724.313 L 97.161 666.541 C 141.816 707.115 199.844 731.659 263.198 731.659 C 354.56 731.659 461.346 661.866 502.727 555.048 L 502.727 731.451 L 550.064 731.451 L 550.064 0 L 502.727 0 L 502.727 475.278 L 502.766 475.278 Z M 68.009 461.628 C 68.009 322.459 157.516 229.374 263.198 229.332 C 309.352 229.332 341.621 245.528 373.061 268.612 C 396.611 285.893 399.57 321.541 379.294 342.997 L 119.449 618.037 C 88.561 577.505 68.009 523.741 68.009 461.67 L 68.009 461.628 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 666.476 0 C 645.331 0 628.211 18.116 628.211 40.49 C 628.211 62.864 645.331 80.98 666.476 80.98 C 687.62 80.98 704.74 62.864 704.74 40.49 C 704.74 18.116 687.62 0 666.476 0 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 1936.861 708.741 C 1902.581 676.85 1866.249 624.672 1853.626 442.926 C 1848.458 368.708 1826.052 310.143 1785.657 267.566 C 1685.971 162.501 1524.234 162.292 1424.746 267.566 C 1374.292 320.955 1349.439 391.374 1350.149 461.501 L 1350.859 479.158 C 1355.317 541.271 1381.511 600.42 1424.746 649.425 C 1491.453 725.062 1666.286 781.623 1782.895 663.617 C 1812.678 633.479 1823.566 611.481 1834.651 584.557 L 1834.651 731.449 L 1928.814 731.449 C 1940.135 731.449 1945.382 716.63 1936.861 708.741 Z M 1832.876 496.523 C 1826.682 542.815 1795.321 585.267 1752.481 628.763 C 1678.436 703.941 1519.54 741.467 1439.223 638.656 C 1381.037 564.187 1377.724 411.16 1467.113 312.481 C 1558.12 212.049 1687.51 215.681 1765.42 291.276 C 1824.789 348.839 1842.067 427.69 1832.876 496.565 L 1832.876 496.523 Z" fill="currentColor" fill-rule="nonzero"></path></svg></a>
+  <nav class="nav-links" aria-label="Main"><a href="#work">Work</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#contact">Contact</a></nav>
+  <a class="pill pill-light nav-cta" href="mailto:contact@helloelida.com" data-magnet>Say hello</a>
+  <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" data-burger><span></span><span></span></button>
+</header>
+<div class="menu" data-menu><a href="#work">Work</a><a href="#services">Services</a><a href="#studio">Studio</a><a href="#contact">Contact</a><a class="menu-mail" href="mailto:contact@helloelida.com">contact@helloelida.com</a></div>
+<main>
+<section id="top" class="hero" data-theme="dark" data-hero>
+  <div class="hero-bg"></div>
+  <div class="hero-top" data-hero-lines>
+    <h1 class="hero-h1">
+      <span class="ln"><span class="ln-in">Become</span></span>
+      <span class="ln"><span class="ln-in serif">who you <em>are.</em></span></span>
+    </h1>
+    <div class="hero-sub">
+      <p class="hero-kicker hf">A Scandinavian<br>design studio</p>
+      <div class="hf"><a class="pill pill-fill has-dot" href="#work" data-magnet>Selected work <span class="pill-dot"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M20 2v36M2 20l18 18 18-18"></path></svg></span></a></div>
+    </div>
+  </div>
+  <div class="statue-box" data-statue-box>
+    <div class="statue-in">
+      <img class="statue-still" data-statue-fallback src="assets/statue-first-frame.webp" alt="">
+      <div class="statue" data-statue aria-label="Marble statue of Socrates, turning toward the cursor"></div>
+    </div>
+  </div>
+  <div class="fc-layer" data-ring aria-label="Work">
+    <a class="fc" href="work/propaws.html" style="--dl:0.80s" aria-label="ProPAWS"><span class="fc-in"><span class="fc-card"><img src="assets/01-propaws.webp" alt=""><span class="fc-info"><b class="fc-t">ProPAWS</b><span class="fc-s">Logo</span><span class="fc-s">Brand identity</span><span class="fc-s">Landing page design</span></span></span></span></a>
+    <a class="fc" href="work/hot-salty.html" style="--dl:0.92s" aria-label="Ramsalt Hot &amp; Salty"><span class="fc-in"><span class="fc-card"><img src="assets/03-hotsalty.webp" alt=""><span class="fc-info"><b class="fc-t one">Ramsalt Hot &amp; Salty</b><span class="fc-s">Logo</span><span class="fc-s">Brand identity</span><span class="fc-s">Campaign</span><span class="fc-s">Print production</span><span class="fc-s">SoMe</span></span></span></span></a>
+    <a class="fc" href="work/min-fodsel.html" style="--dl:1.04s" aria-label="Min fødsel"><span class="fc-in"><span class="fc-card"><img src="assets/05-minfodsel.webp" alt=""><span class="fc-info"><b class="fc-t">Min fødsel</b><span class="fc-s">Campaign</span><span class="fc-s">SoMe strategy</span><span class="fc-s">Print production</span></span></span></span></a>
+    <a class="fc" href="work/catch-the-fox.html" style="--dl:1.16s" aria-label="Catch the Fox"><span class="fc-in"><span class="fc-card"><img src="assets/06-ctf.webp" alt=""><span class="fc-info"><b class="fc-t">Catch the Fox</b><span class="fc-s">Concept</span><span class="fc-s">Cover art</span><span class="fc-s">T-shirt design</span></span></span></span></a>
+    <a class="fc" href="work/jambo.html" style="--dl:1.28s" aria-label="Jambo Travelhouse"><span class="fc-in"><span class="fc-card"><img src="assets/02-jambo.webp" alt=""><span class="fc-info"><b class="fc-t">Jambo Travelhouse</b><span class="fc-s">Logo</span></span></span></span></a>
+    <a class="fc" href="work/evolve.html" style="--dl:1.40s" aria-label="National Gypsum"><span class="fc-in"><span class="fc-card"><img src="assets/07-evolve.webp" alt=""><span class="fc-info"><b class="fc-t one">National Gypsum</b><span class="fc-s">Campaign video</span><span class="fc-s">Storyboarding</span><span class="fc-s">Animation</span><span class="fc-s">Illustration</span></span></span></span></a>
+    <a class="fc" href="work/why-cellulose.html" style="--dl:1.52s" aria-label="Greenfiber"><span class="fc-in"><span class="fc-card"><img src="assets/08-greenfiber.webp" alt=""><span class="fc-info"><b class="fc-t">Greenfiber</b><span class="fc-s">Campaign video</span><span class="fc-s">Storyboarding</span><span class="fc-s">Animation</span><span class="fc-s">Illustration</span></span></span></span></a>
+    <a class="fc" href="work/wedding.html" style="--dl:1.64s" aria-label="Wedding design"><span class="fc-in"><span class="fc-card"><img src="assets/04-wedding.webp" alt=""><span class="fc-info"><b class="fc-t">Wedding design</b><span class="fc-s">Illustration</span><span class="fc-s">Print production</span><span class="fc-s">Photography</span></span></span></span></a>
+  </div>
+</section>
+
+<section id="manifesto" class="mani" data-theme="light">
+  <div class="mani-stage">
+    <h2 class="mani-h2" data-fill>You can tell<br>when a human<br>made <em class="serif">the decision.</em></h2>
+    <div class="gif gif-greek" role="img" aria-label="Animated figure walking with a board under the arm"></div>
+    <div class="gif gif-chess" role="img" aria-label="Animated figure moving a piece on a chessboard"></div>
+    <div class="mani-cta" data-reveal>
+      <p class="serif-i mani-q">Need <span class="rot rot-serif" data-rot data-words="design,brand,strategy,motion"><span class="rot-w">design</span></span> consultation?</p>
+      <div class="cta-row"><a class="pill pill-dark" href="mailto:contact@helloelida.com" data-magnet>Send us a message.</a><a class="e-mark" href="mailto:contact@helloelida.com" aria-label="Email Elida" data-magnet><img src="assets/e-mark.svg" alt="" width="80" height="80"></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="work sec" data-theme="dark">
+  <div class="wrap">
+    <div class="sec-head has-note" data-reveal><p class="label-lg">Selected work</p>
+      <p class="hand-note">Click into any project<br>to learn more!<svg class="hand-line" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="303.685" height="57.108" viewBox="0 0 303.685 57.108" fill="none">
+  <path d="M 105.427 36.926 C 131.854 26.908 165.113 19.859 192.946 14.891 L 213.754 11.035 C 201.388 11.224 189.555 12.348 177.358 13.543 C 161.431 15.104 145.843 17.257 130.013 19.693 C 111.458 22.544 93.158 26.104 74.833 30.172 L 4.863 45.69 C 3.846 45.915 2.792 45.75 2.15 46.507 C 1.617 47.145 1.302 48.009 0.079 48.044 C -0.308 46.412 0.757 44.744 2.598 44.366 L 13.208 42.189 L 63.254 31.071 L 101.805 22.804 C 125.023 18.451 148.29 15.009 171.823 12.407 C 189.252 10.468 206.523 9.237 223.952 8.906 C 227.391 8.835 230.359 8.374 233.726 7.889 L 266.573 3.17 L 281.64 1.147 L 293.521 0 L 302.75 0 C 303.235 0 303.647 0.355 303.683 0.674 C 303.719 0.994 303.199 1.573 302.678 1.585 L 292.104 1.751 L 275.802 3.619 L 252.317 6.765 L 241.72 8.528 L 263.581 8.634 C 263.993 8.634 264.344 8.977 264.429 9.178 C 264.586 9.533 264.296 9.912 263.92 10.136 C 262.879 10.751 261.886 10.527 260.65 10.633 C 247.461 11.851 234.562 13.389 221.493 15.778 L 186.224 22.201 C 156.78 28.103 127.809 35.164 99.02 43.467 L 79.084 49.534 C 72.616 51.498 66.488 53.58 60.25 56.075 C 59.148 56.513 57.876 57.222 56.798 57.092 C 56.229 57.021 56.399 56.241 56.471 55.945 C 56.617 55.436 57.101 55.176 57.67 54.963 L 72.543 49.381 L 105.427 36.914 L 105.427 36.926 Z M 93.703 43.207 C 122.553 34.892 151.33 27.641 180.701 21.597 L 222.922 13.827 L 245.062 10.538 L 229.644 10.468 L 226.992 10.74 L 193.963 16.393 C 179.599 18.853 165.622 21.751 151.463 25.063 C 142.682 27.109 134.349 29.427 125.69 31.911 C 114.837 35.459 104.119 38.759 93.69 43.207 L 93.703 43.207 Z" fill="currentColor" fill-rule="nonzero"></path>
+</svg></p></div>
+    <div class="wk-box" data-wk>
+      <ul class="wk-list">
+      <li class="wk-row" data-key="propaws" data-reveal style="--i:0">
+        <a class="wk-a" href="work/propaws.html"><img class="wk-thumb" src="assets/01-propaws.webp" alt=""><span class="wk-num">01</span><span class="wk-name"><span class="wk-t">ProPAWS</span></span><span class="wk-tags"><span class="wk-tag">Logo</span><span class="wk-tag">Brand identity</span><span class="wk-tag">Landing page design</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="hotsalty" data-reveal style="--i:1">
+        <a class="wk-a" href="work/hot-salty.html"><img class="wk-thumb" src="assets/03-hotsalty.webp" alt=""><span class="wk-num">02</span><span class="wk-name"><span class="wk-t">Ramsalt Hot &amp; Salty</span></span><span class="wk-tags"><span class="wk-tag">Logo</span><span class="wk-tag">Brand identity</span><span class="wk-tag">Campaign</span><span class="wk-tag">Print production</span><span class="wk-tag">SoMe</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="minfodsel" data-reveal style="--i:2">
+        <a class="wk-a" href="work/min-fodsel.html"><img class="wk-thumb" src="assets/05-minfodsel.webp" alt=""><span class="wk-num">03</span><span class="wk-name"><span class="wk-t">Min fødsel</span></span><span class="wk-tags"><span class="wk-tag">Campaign</span><span class="wk-tag">SoMe strategy</span><span class="wk-tag">Print production</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="ctf" data-reveal style="--i:3">
+        <a class="wk-a" href="work/catch-the-fox.html"><img class="wk-thumb" src="assets/06-ctf.webp" alt=""><span class="wk-num">04</span><span class="wk-name"><span class="wk-t">Catch the Fox</span></span><span class="wk-tags"><span class="wk-tag">Concept</span><span class="wk-tag">Cover art</span><span class="wk-tag">T-shirt design</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="jambo" data-reveal style="--i:0">
+        <a class="wk-a" href="work/jambo.html"><img class="wk-thumb" src="assets/02-jambo.webp" alt=""><span class="wk-num">05</span><span class="wk-name"><span class="wk-t">Jambo Travelhouse</span></span><span class="wk-tags"><span class="wk-tag">Logo</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="evolve" data-reveal style="--i:1">
+        <a class="wk-a" href="work/evolve.html"><img class="wk-thumb" src="assets/07-evolve.webp" alt=""><span class="wk-num">06</span><span class="wk-name"><span class="wk-t">National Gypsum</span></span><span class="wk-tags"><span class="wk-tag">Campaign video</span><span class="wk-tag">Storyboarding</span><span class="wk-tag">Animation</span><span class="wk-tag">Illustration</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="greenfiber" data-reveal style="--i:2">
+        <a class="wk-a" href="work/why-cellulose.html"><img class="wk-thumb" src="assets/08-greenfiber.webp" alt=""><span class="wk-num">07</span><span class="wk-name"><span class="wk-t">Greenfiber</span></span><span class="wk-tags"><span class="wk-tag">Campaign video</span><span class="wk-tag">Storyboarding</span><span class="wk-tag">Animation</span><span class="wk-tag">Illustration</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      <li class="wk-row" data-key="wedding" data-reveal style="--i:3">
+        <a class="wk-a" href="work/wedding.html"><img class="wk-thumb" src="assets/04-wedding.webp" alt=""><span class="wk-num">08</span><span class="wk-name"><span class="wk-t">Wedding Design</span></span><span class="wk-tags"><span class="wk-tag">Illustration</span><span class="wk-tag">Print production</span><span class="wk-tag">Photography</span></span><span class="wk-arrow circ circ-cream"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M2 20h36M20 2l18 18-18 18"></path></svg></span></a>
+      </li>
+      </ul>
+      <div class="wk-prev" data-prev aria-hidden="true"><div class="wk-prev-in"><img src="assets/01-propaws.webp" alt="" data-key="propaws"><img src="assets/03-hotsalty.webp" alt="" data-key="hotsalty"><img src="assets/05-minfodsel.webp" alt="" data-key="minfodsel"><img src="assets/06-ctf.webp" alt="" data-key="ctf"><img src="assets/02-jambo.webp" alt="" data-key="jambo"><img src="assets/07-evolve.webp" alt="" data-key="evolve"><img src="assets/08-greenfiber.webp" alt="" data-key="greenfiber"><img src="assets/04-wedding.webp" alt="" data-key="wedding"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="svc sec" data-theme="light">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><p class="label-lg">What can we help you with?</p></div>
+  </div>
+  <section class="wwd" aria-label="Services">
+    <div class="list">
+      <div class="pair" data-reveal>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">01</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b1 wwd-t1">
+            <h3 class="title">Strategic communication</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b1" aria-hidden="true">
+            <p>What to say, to whom, and why. We start with the questions and turn the answers into a direction the rest of the work can follow.</p>
+          </div>
+          <div class="more" id="wwd-t1" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Communication strategy</span>
+                <span class="tag">Messaging &amp; key messages</span>
+                <span class="tag">Tone of voice</span>
+                <span class="tag">Audience mapping</span>
+                <span class="tag">Brand story</span>
+                <span class="tag">Workshops</span>
+                <span class="tag">Copywriting</span>
+                <span class="tag">Naming</span>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">02</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b2 wwd-t2">
+            <h3 class="title">Brand positioning &amp; visual research</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b2" aria-hidden="true">
+            <p>Who you are, and what that looks like. We map where you stand against the field, find the essence underneath the brand, and make the direction concrete before anything is designed.</p>
+          </div>
+          <div class="more" id="wwd-t2" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Positioning</span>
+                <span class="tag">Competitor mapping</span>
+                <span class="tag">Brand essence</span>
+                <span class="tag">Moodboards</span>
+                <span class="tag">Visual direction</span>
+                <span class="tag">Visual research</span>
+                <span class="tag">Questionnaire &amp; interviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pair" data-reveal>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">03</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b3 wwd-t3">
+            <h3 class="title">Design &amp; brand identity</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b3" aria-hidden="true">
+            <p>Logo, typography, colour, image style. A system built to carry your message and to hold as the organisation grows.</p>
+          </div>
+          <div class="more" id="wwd-t3" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Logo</span>
+                <span class="tag">Typography</span>
+                <span class="tag">Colour palette</span>
+                <span class="tag">Image style</span>
+                <span class="tag">Brand guidelines</span>
+                <span class="tag">Templates</span>
+                <span class="tag">Cover art</span>
+                <span class="tag">Merch</span>
+                <span class="tag">Presentation design</span>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">04</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b4 wwd-t4">
+            <h3 class="title">Campaign &amp; concept</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b4" aria-hidden="true">
+            <p>One idea, carried across every channel. We develop the concept, write the line, and design the assets.</p>
+          </div>
+          <div class="more" id="wwd-t4" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Campaign concept</span>
+                <span class="tag">Key visual</span>
+                <span class="tag">Headlines &amp; copy</span>
+                <span class="tag">Ads &amp; banners</span>
+                <span class="tag">Event material</span>
+                <span class="tag">Conference presence</span>
+                <span class="tag">Rollout across channels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pair" data-reveal>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">05</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b5 wwd-t5">
+            <h3 class="title">Social media</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b5" aria-hidden="true">
+            <p>Presence that looks and sounds like you, week after week.</p>
+          </div>
+          <div class="more" id="wwd-t5" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">General guidance</span>
+                <span class="tag">SoMe strategy</span>
+                <span class="tag">Content plan</span>
+                <span class="tag">Templates for your team</span>
+                <span class="tag">Production-ready posts</span>
+                <span class="tag">LinkedIn</span>
+                <span class="tag">Facebook</span>
+                <span class="tag">Instagram</span>
+                <span class="tag">Carousels</span>
+                <span class="tag">Short video</span>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">06</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b6 wwd-t6">
+            <h3 class="title">Web design</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b6" aria-hidden="true">
+            <p>A site that reads as yours, not as a template.</p>
+          </div>
+          <div class="more" id="wwd-t6" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Landing pages</span>
+                <span class="tag">Website design</span>
+                <span class="tag">UX &amp; structure</span>
+                <span class="tag">Copy for web</span>
+                <span class="tag">Motion on web</span>
+                <span class="tag">Launch &amp; handover</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pair" data-reveal>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">07</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b7 wwd-t7">
+            <h3 class="title">Animation &amp; motion</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b7" aria-hidden="true">
+            <p>Brands and data that move.</p>
+          </div>
+          <div class="more" id="wwd-t7" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Animated logo</span>
+                <span class="tag">Motion identity</span>
+                <span class="tag">Animated data &amp; graphs</span>
+                <span class="tag">Annual-report content for LinkedIn</span>
+                <span class="tag">Explainers</span>
+                <span class="tag">Social video</span>
+                <span class="tag">Title sequences</span>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">08</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b8 wwd-t8">
+            <h3 class="title">Photography</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b8" aria-hidden="true">
+            <p>Images made for the brand, not stock chosen for it.</p>
+          </div>
+          <div class="more" id="wwd-t8" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Art direction</span>
+                <span class="tag">Portraits &amp; team photos</span>
+                <span class="tag">Product</span>
+                <span class="tag">Environment &amp; workplace</span>
+                <span class="tag">Event</span>
+                <span class="tag">Content for social</span>
+                <span class="tag">Image editing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pair" data-reveal>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">09</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b9 wwd-t9">
+            <h3 class="title">Illustration</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b9" aria-hidden="true">
+            <p>Drawings, figures and sketches that give a brand a hand.</p>
+          </div>
+          <div class="more" id="wwd-t9" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Editorial illustration</span>
+                <span class="tag">Icons &amp; pictograms</span>
+                <span class="tag">Sketches over photography</span>
+                <span class="tag">Characters &amp; figures</span>
+                <span class="tag">Maps &amp; diagrams</span>
+                <span class="tag">Patterns</span>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-item>
+          <span class="num" aria-hidden="true">10</span>
+          <div class="tr" role="button" tabindex="0" aria-expanded="false" aria-controls="wwd-b10 wwd-t10">
+            <h3 class="title">Print &amp; production</h3>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M21 0v42M0 21h42" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" /></svg></span>
+          </div>
+          <div class="body" id="wwd-b10" aria-hidden="true">
+            <p>From file to finished object. Specified, proofed, and followed through to the printer.</p>
+          </div>
+          <div class="more" id="wwd-t10" aria-hidden="true">
+            <div class="tags">
+                <span class="tag">Annual reports</span>
+                <span class="tag">Books &amp; publications</span>
+                <span class="tag">Covers</span>
+                <span class="tag">Posters</span>
+                <span class="tag">Packaging</span>
+                <span class="tag">Signage</span>
+                <span class="tag">Business cards</span>
+                <span class="tag">Print specification</span>
+                <span class="tag">Proofing &amp; print follow-up</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="studio" class="studio">
+  <div class="studio-band" data-theme="dark">
+    <div class="wrap">
+      <div class="sec-head" data-reveal><p class="label-lg">Say hello to Elida</p></div>
+    </div>
+  </div>
+  <div class="crew" data-theme="light">
+    <figure class="crew-photo clip-in" data-clip><img src="assets/studio-kitchen.webp" alt="Elias and Ida at the kitchen table, mid-game">
+      <h3 class="crew-sig crew-sig-e" data-reveal><span class="sr">Elias Næss</span><svg class="sig" viewBox="0 0 311.49 70.88" fill="currentColor" aria-hidden="true" focusable="false"><path d="M61.83,55.53c3.17,4.88,10.26-6.32,12.78-10.32-1.31-3.33-1.96-7.31.24-9.98,1.04-1.26,2.53-1.8,3.97-1.28s2.4,1.94,2.26,3.64c-.1,1.27-.66,2.41-1.29,3.49l-2.41,4.11,3.95,8.38c.96,2.04,1.42,4.26,1.18,6.45-.54,4.94-4.83,7.96-9.64,7.05-2.31-.43-4.41-1.2-6.43-2.47l-7.79-4.88-.35-.27c-.17-.13.02-.66.22-.56l7.24,3.52c2.43,1.18,4.93,1.98,7.62,2.21s4.89-1.1,5.78-3.65c1.43-3.98-1.83-9.03-3.54-13.26-2.76,3.8-6.57,9.84-10.51,11-2.7.79-5.13-.88-6.09-3.73-2.7,3.37-5.75,7.86-9.59,9.86-1.96,1.08-4.28.3-5.27-1.7-.52-1.04-.53-2.13-.54-3.35l-4.68,5.1c-1.23,1.34-2.75,2.63-4.07,2.15-1.62-.58-1.81-3.12-1.56-5.34.2-1.85.89-3.42,1.31-5.32-2.97,2.64-5.55,5.25-8.57,7.59-.99.76-2.19,1.41-3.43,1.04-2.78-.83-1.09-8.11-.56-12.02-4.11,5.21-8.16,10.17-12.78,14.81-1.13,1.14-2.34,2.1-3.74,2.72-1.84.81-3.66.07-4.48-1.72C.08,66.68-.04,64.38.01,61.97c.17-7.74,3.44-14.47,7.59-21.08-1.99.44-3.82.4-5.11-.99-2.5-2.68.74-9.13,2.99-12.45,3.33-4.9,7.19-9.29,11.55-13.29,2.12-1.94,5.5-4.77,6.88-3.18.94,1.09-.52,2.82-1.46,4.49l-2.34,4.15c-.46-1.96,1.57-4.3,1.91-6.53-5.73,4.67-10.58,10.16-14.62,16.28-1.51,2.29-4,7.46-3.07,8.81s5,0,6.31-1.46l4.43-4.92c1.41-1.56,3.22-2.99,4.27-1.87.46.49.39,1.25.03,1.86-2.03,2.5-4.29,4.55-6.88,6.55-3.73,4.66-6.71,9.8-8.64,15.47-1.38,4.06-2.33,10.66-.74,14.16.72,1.6,3.04.08,4.75-1.55,5.52-5.26,10.42-10.94,14.95-17.1,1.84-7.52,3.84-14.76,6.47-22,1.08-2.98,2.35-5.72,4.24-8.21,2.36-3.11,6.54-5.11,8.51-2.98.67.72.92,1.87.57,2.96-.93,2.87-2.27,5.47-3.81,8.14-4.26,7.35-8.71,14.39-13.52,21.42-.91,3.49-1.54,6.85-2.04,10.42-.2,1.39-.3,2.74.04,4.11.95-.28,1.59-.79,2.28-1.36,3.41-2.83,6.62-5.76,9.79-8.85,1.13-1.1,1.81-2.19,2.39-3.65,1.4-3.57,3.29-8.76,6.32-10.39.79-.43,1.69-.33,2.23.09.6.47.87,1.59.42,2.35-2.23,3.81-4.99,7.14-7.82,10.57-1.25,2.75-2.34,5.43-3.15,8.33-.4,1.62-.67,3.22-.2,4.98,1.35-.75,2.22-1.85,3.21-2.91,1.95-2.1,3.76-4.14,5.84-6.17,1.59-3.95,3.96-7.43,7.11-10.31,2.79-2.54,8-4.66,9.02-3.34.19.24.24.65.31,1.13.59-.54,1.07-1.15,1.88-1.44.86-.31,1.85.03,2.1.93.65,2.36-2.71,6.44-4.1,9.27-.34.89.45,2.41.93,3.15ZM40.55,17.6c-.25-.19-.82-.24-1.21-.12-4.57,1.49-6.84,7.76-8.58,12.28-1.51,4.69-3.1,9.17-4.17,14.18,2.89-4.21,16.11-24.71,13.96-26.34ZM76.38,42.3c1.03-1.73,1.85-3.06,2.25-4.74,0-.53-.24-1.06-.68-1.27-1.3-.62-2.98,2.94-1.57,6.01ZM51.39,60.81c2.71-2.63,5.02-5.51,7.11-8.68-.07-2.83.66-5.34,2.03-7.83-2.33,1.4-4.11,3.06-6.09,4.76l-7.07,7.06c-.98.98-2.13,5.51-.48,6.66,1.14.79,3.01-.66,4.5-1.96Z"></path><path d="M207.4,38.55c-1.47,5.99,1.11,10.1-3.38,13.59-2.15,1.67-4.8,2.62-7.6,2.89l-7.08-.02c-.17,0-.52-.21-.55-.33s.21-.39.41-.44l7.79-1.78c1.65-.38,3.17-1.18,4.53-2.14,1.54-.98,2.38-2.5,2.34-4.38-.06-3.36.35-6.58,1.62-9.67l-11.34,7.64c-3.13,2.11-6.61,4.56-8.79,1.66-2.65,2.38-6.03,5.28-9.54,4.92-1.12-.12-1.9-.82-2.17-1.93-3.39,1.93-9.88,6.43-12.17,4.25s1.83-7.78,3.69-10.93c-3.62-.03-6.71,2.99-9.04,5.52-1.65,1.79-3.09,3.61-4.29,5.74-.28.49-1.01.51-1.4.3-.36-.19-.65-.79-.35-1.32l4.19-7.48-4.14,3.72c-2.37,2.13-6.07,5.6-8.11,4.65-.53-.25-1.08-1.01-1.2-1.85-.13-.92.41-1.62.35-2.75-2.75,2.64-9.56,9.29-12,7.81-4.15-2.53,7.83-14.23,11.34-17.43.69-.63,2.01-.8,2.69-.29.96.73.81,1.96,1.13,3.04,3.43-6.45,6.8-12.51,10.66-18.46,1.06-1.64,2.36-2.93,3.43-2.02,1.22,1.02-.4,3.58-1.47,5.62-2.79,5.32-6.27,10.01-9.78,14.87-2.02,2.8-3.02,6.16-4.22,9.43,1.39-.07,2.03-.79,2.91-1.41,2.86-1.99,5.26-4.41,7.85-6.72,2.17-1.93,4.07-3.87,5.79-6.19.44-.59,1.36-1.12,1.95-.55.99.94-1.25,2.12-2.39,4.16-.75,1.35-1.67,2.5-2.21,4.17,2.9-2.32,5.81-4.72,9.55-4.02,2.08-2.94,8.06-7.8,10.18-5.88,1.96,1.77-2.57,4.9-5.14,6.62-1.16.78-2.63,1.1-3.87,1.33-1.72,2.06-2.95,4.39-4.05,6.76-.3.65-.51,1.22-.43,1.95,2.85-.23,9.81-3.88,11.42-5.54,2.67-2.74,10.32-12.44,12.45-9.79.45.56.35,1.4-.21,2.14-2.26,2.93-5.13,5.23-8.21,7.33-1.14.78-2.37,1.52-2.59,3.02,1.83.16,3.38-.6,4.82-1.51,1.85-1.15,3.29-2.72,4.77-4.32.84-2.92,4.11-7.84,5.49-6.41.23.24.44.83.16,1.28l-3.22,5.14c-.36.58-.52,1.3-.38,2,1.42,0,2.62-.65,3.81-1.45l11.47-7.65,6.03-3.6c.47-.28,1.22-.11,1.49.29.92,1.37-2.17,3.03-3.01,6.43ZM170.33,39.49c1.49-.7,2.67-1.48,3.67-2.79-1.49.52-2.77,1.5-3.67,2.79ZM143.52,42.96l-1.23-2.91c-.96.42-1.45,1.08-2.08,1.75-2.88,3.08-5.64,6.17-8,9.67-.46.69-1.01,1.32-1.01,2.28,4.89-2.84,8.87-6.57,12.32-10.79Z"></path><path d="M261.02,43.89c-3.03,2.2-7.04,5.23-10.13,3.7-1.31-.65-1.8-2.32-1.42-3.78,2.35-8.8,12.03-14.51,13.35-10.84.09.25-.12,1.04-.43,1-.87-.14-1.57-.38-2.4.06-3.48,1.84-6.11,4.76-7.6,8.42-.35.86-.92,2.01-.37,2.83.52.37,1.72.09,2.33-.16,2.58-1.04,4.82-2.56,6.74-4.48.33-3.46,1.42-6.54,3.59-9.11,1.78-2.11,4.75-5.19,6.56-3.86,2.19,1.62-1.78,7.38-3.95,10.05l-3.83,4.04c-.49.52.03,1.75.36,2.2.97-.21,1.77-.62,2.57-1.19,6.07-4.27,10.88-9.23,12.89-16.52l.16-2.26c.05-.76.64-1.2,1.31-1.24.71-.05,1.25.63,1.27,1.44l.14,3.01,2.48,9.64,8.91-6.19c.43-.3.95-.59,1.02-1.15.44-4.01,1.74-9,5.92-8.66.98.08,1.86.64,2.21,1.31,1.27,2.48-3.08,5.75-5.78,7.87-.03,1.74.8,3.34,2.07,4.52l3.86,3.58,7.84,6.73c.63.54.89,1.34.76,2.05-.39,2.17-4.62,2.23-7.82,2.23h-5.27c-1.93.01-3.91-.61-4.93-2.49,4.82.48,9.34.3,14.04-.59l-6.85-5.95-3.84-3.81c-1.24-1.23-1.81-2.74-2.21-4.54l-3.94,2.66-5.56,4.11c.41,2.19.95,4.23.95,6.38,0,2.67-1.64,4.7-4.21,5.36-1.57.41-3.43-.02-4.16-1.61-1.34-2.94,2.14-6.97,4.54-9.53.32-.39-.02-1.34-.15-1.78l-1.87-6.71c-1.35,2.63-2.53,4.91-4.47,6.83l-4.45,4.41c-2.16,2.15-6.27,5.34-8.63,4.25-.73-.34-1.14-1.07-1.6-2.25ZM297.15,28.03c1.96-1.34,4.89-4.26,3.96-5.01-.66-.54-2.21-.12-2.97,1.21-.67,1.16-1.02,2.4-.99,3.81ZM269.3,30.37c-.06-.32-.51-.06-.76.19-2.06,2.08-3.93,4.31-4.5,7.36,2.27-2.17,4.01-4.56,5.26-7.55ZM279.96,48.04c1.03.2,2.02-.3,2.68-.92s1.02-1.65.85-2.6l-.67-3.77c-2.27,2.17-4.95,6.87-2.85,7.29Z"></path><path d="M216.91,55.31c-.92.65-2.54-.54-2.4-1.62.16-1.2,1-1.76,1.64-2.69,5.79-8.37,11.02-16.93,16.03-25.79l5.36-11.15c.42-.87,1.4-1.24,2.13-1.05.85.23,1.34,1.1,1.14,2.13-1.67,8.31-2.93,16.58-3.42,25.07-.09,1.54-.49,2.88.08,4.48l2.55-3.83c4.59-6.36,8.72-12.82,12.69-19.6l5.41-9.22,4.91-7.29c1.44-2.14,3.39-3.74,5.77-4.74.18.17.27.34.28.45-1.39,1.18-2.41,2.54-3.4,4.09-3.64,5.71-6.88,11.44-10.05,17.46-4.31,8.18-8.96,15.91-14.48,23.32-1.42,1.91-2.59,4.3-4.71,3.73-.58-.15-1.08-.72-1.35-1.51-.4-1.51-.56-3.07-.49-4.7.22-5.91.95-11.53,1.57-17.6-4.33,7.58-8.64,14.84-13.5,21.98-1.52,2.23-2.86,4.4-4.72,6.32-.47.48-.72,1.15-1.03,1.78Z"></path><path d="M102.4,43.92l-2.22,2.91-7.98,10.92c-.53.73-.77,1.38-.85,2.27-.22.27-1.02.13-1.26-.18-.78-1.02-.05-2.25.89-3.58l7.87-11.15c-.32-.97-.33-1.93.77-2.51l1.83-.98c3.03-3.96,5.71-7.95,8.49-12.1,2.96-4.41,5.95-8.6,9.29-12.69.43-.53,1.23-.51,1.61-.32.43.22.79,1.1.58,1.74-2.17,6.64-4.2,13.2-5.93,20l4.71-.4c-.01.11,0,.33.03.39l-5.3,1.88-5.24,16.85c-.25.8-.1,1.53.45,2.08-.54.54-1.46.5-1.88,0-.64-.76-.58-1.7-.31-2.62l4.45-15.57c-3.53.91-6.61,1.91-10,3.04ZM104.74,40.62l8.38-1.97,4.97-16.99c-3.11,3.65-5.46,7.47-8.09,11.27l-5.27,7.69Z"></path><path d="M123.29,45.83l-4.27,5.2c-1.46,1.77-2.61,3.63-3.68,5.63-.28.51-.91.81-1.27.71-.53-.14-.98-1.02-.63-1.61,3.49-5.84,6.23-10.38,8.28-17.08.11-.35.42-.53.73-.49,1.35.18-.49,4.74-1.31,7.41l3.77-4.02c1.73-1.84,3.51-3.56,5.71-4.83.59-.34,1.39-.33,1.99-.02,2.92,1.52-2.59,11.63-4.42,15.3-1.13,2.26-2.21,4.4-3,6.79-.22.66-1.55-.32-.19-3.53l4.47-10.57c.83-1.95,1.61-3.82,1.77-6.14-3.17,1.95-5.64,4.42-7.95,7.23Z"></path><path d="M47.97,27.97c.24.09.39.24.42.44s-.12.45-.45.43c-1.69-.07-3.05-.64-2.76-1.62.14-.48.55-.69,1.15-.7.49,0,1.15.02,1.31.61.05.18-.21.63.34.83Z"></path></svg></h3>
+      <h3 class="crew-sig crew-sig-i" data-reveal><span class="sr">Ida Österman</span><svg class="sig" viewBox="0 0 330.46 92.19" fill="currentColor" aria-hidden="true" focusable="false"><path d="M64.03,70.03c-1.33-2.01-1.77-4.2-1.96-6.62-2.13,3.2-4.63,6.1-7.89,8.14-1.41.88-2.93,1.27-4.52.67-1.36,1.21-2.63,2.31-4.14,3.16-1.84,1.03-3.84.63-5.04-1.11-2.12-3.07-1.59-7.45-1.15-11.34-2.89,4.52-10.32,17.31-14.94,13.98-1.96-1.41-1.51-4.92-.5-7.57,2-5.23,4.86-9.98,8.41-14.3,1.91-2.33,4.06-4.09,6.65-5.65-6.34.01-12.99,2.81-18.3,5.95-1.67,5.96-2.95,11.75-4.29,17.74-1.05,4.68-2.26,10.74-4.91,14.23-1.52,2-4.07,2.46-6.17,1.01-2.36-1.62-3.78-4.12-4.59-6.87-1.04-3.49-.91-6.94.57-10.31,3.22-7.35,9.74-12.94,16.61-17.21l7.03-24.95,2.73-8.94c-3.72,3.47-10.94,10.59-15.21,9.77-.91-.17-1.48-.8-1.4-1.64.06-.64.72-1.46,1.56-1.15.21.08-.01.77-.13,1.06,1.62.03,2.96-.66,4.29-1.6,5.11-3.62,9.72-8.02,13.33-13.15,1-1.42,2.16-6.68,4.7-5.25.73.41,1.04,1.51.54,2.3l-1.94,3.07c-1.97,4.69-3.5,9.35-4.9,14.27l-6.87,24.09c7.45-3.73,14.7-5.62,22.92-4.4,3.11-7.6,6.46-15.23,11.91-21.22,1.45-1.59,3.23-3,4.59-2,.93.68.59,2.52-.27,3.91l-3.6,5.77c-4.16,6.67-8.55,13.02-12.3,19.96-1.63,3.01-2.19,6.39-3.08,9.64-.77,2.82-.98,7.34.54,9.73,1.25,1.97,4.14-.61,6.11-2.62.08-1.58.18-3.12.77-4.72,2.08-5.63,5.71-10.51,10.54-14.09,1.35-1,3.09-1.44,4.26-.61.46.32.61,1.05.89,1.73.38.19,1.11.25,1.36.61.32.46.45,1.01.26,1.65-1.24,4.25-2.19,10.09.13,13.59,1.2,1.81,3.19,2.49,5.22,1.8,2.23-.76,4.17-2.07,5.68-3.9l4.54-5.51c.19-.23.33-.28.45-.18.3.22.21.39.04.67l-3.82,6c-1.41,2.22-3.37,3.93-5.77,4.99-3.29,1.46-6.88.53-8.93-2.56ZM52.77,36.17c1.38-1.72,2.45-3.37,3.37-5.29-1.38,1.65-2.62,3.3-3.37,5.29ZM35.38,65.03c2.21-3.48,4.27-6.89,6.27-10.48.71-1.28,1.09-2.59,1.56-4.14-3.22,1.03-5.8,2.91-7.99,5.39-3.71,4.2-6.59,8.99-8.8,14.14-.8,1.87-1.44,4.58-.52,5.14.28.17.65.09.99-.09,2.98-1.6,6.44-6.71,8.5-9.96ZM62.34,53.19c-5.2,3.54-9.1,8.64-11.07,14.79,4.05-3.73,10.52-8.97,11.07-14.79ZM13.83,71.28l2.99-13.47c-5.56,3.75-10.72,8.71-13.26,14.72-1.91,4.34-.59,10.65,2.91,13.42,4.18,3.31,6.28-10.12,7.35-14.66ZM52.56,69.69c2.98-1.43,5.06-3.82,6.7-6.47l-6.7,6.47Z"></path><path d="M190.67,22.49c.7-1.41,1.59-1.76,2.93-2.09.86-.21,1.95-.86,2.75.07,3.16,3.66-4.46,16.04-7.55,20.65l-2.43,14.8c3.51-.46,6.62-.57,9.88-.73.33.99-.33,1.65-1.22,1.91l-9.15,1.7c-1.35,7.41-2.63,14.68-4.49,21.97l-1.46,5.01c-.18.6-.93.79-1.38.68-.61-.15-.84-.81-.71-1.45l1.09-5.49,3.99-20.13-7.19,1.74c.24.24.64.27.86.78-1.19.51-2.54.03-3.54-.75-.41-.83,0-1.65.85-2,3.07-1.25,6.21-1.96,9.52-2.7l1.74-10.59-4.41,4.85c-4.12,4.44-8.78,9.96-14.26,12.26,1.11,5.98,2.72,13.75.68,19.18-1.47,3.92-4.81,6.56-9.01,7.05-4.81.57-9.57-1.4-12.57-5.17-1.81-2.27-2.07-5.07-.6-7.73-.83-.31-1.4.08-1.89.74-3.57,4.72-7.75,8.82-12.95,11.69-3.13,1.73-6.27,3.03-9.9,3.33-7.38.61-14.85-1.53-20.75-6.1-5.16-4-8.61-9.75-9.96-16.1-.97-4.56-.8-9.01.24-13.56,2.06-9.03,6.15-17.41,11.95-24.62,6.68-8.32,16.41-15.06,27.04-16.58,3.96-.57,8.86.25,10.58,3.83.07.16-.35.53-.45.45-2.27-2.38-6.16-3-9.4-2.32-15.41,3.24-26.8,15.07-33.11,29.13-2.06,4.6-3.6,9.14-4.27,14.15-1.17,8.72,1.72,17.39,8.42,23.19,5.4,4.69,12.65,6.97,19.77,6.38,7.99-.66,16.15-7.14,21-13.53-7.11-.19-13.42-3.36-17.74-8.98-7.41-9.61-10.08-23.59-5.17-34.92,1.83-4.22,4.94-7.6,9.05-9.62,5.7-2.81,13.65-2.84,19.42-.23,4.08,1.85,7.05,4.97,8.56,9.22s1.76,8.34,1.21,12.68c-1.28,10.1-5.76,20.53-11.14,29.14.84.2,1.35-.31,1.8-.84,1.45-1.72,3.24-2.97,5.49-3.37l4.02-.21c2.16-.7,3.43-3.54,5.04-5.4.37-.43.46-1.22,1.48-1.27-.39-3,.2-5.73,1.48-8.42,1.37-2.88,4.59-8.22,6.67-7.13.54.28.84,1.1.55,1.84-.56.66-.43,1.51-.63,2.27-.85,3.19-2.33,5.95-3.81,9.04,3.08-2.21,5.47-4.84,7.91-7.58l7.11-8c1.18-1.33,2.79-2.72,3.46-4.34l2.34-11.15c.48-2.3,1.22-4.51,2.28-6.66ZM189.97,34.59c1.8-2.66,3.24-5.41,4.3-8.43.5-1.43.89-2.8.62-4.18l-.39.66c-.04.06-.92-.21-1.9.63-1.21,3.7-2.04,7.33-2.63,11.31ZM154.91,44.08c.5-3.99.13-7.89-1.27-11.64-3.28-8.79-13.87-11.1-22.31-8.54-4.35,1.32-7.84,4.23-9.96,8.24-5.56,10.53-3.1,24.42,3.98,33.72,4.26,5.59,10.78,8.62,17.77,8.11,5.82-8.78,10.47-19.43,11.79-29.9ZM148.01,81.77c2.36,3.01,6.02,4.65,9.76,4.24,3.43-.37,6.03-2.58,6.95-5.81,1.18-4.16-.05-10.44-.95-15.06-.86.71-1.23,1.63-1.78,2.52-2.2,3.61-8.94,6.95-13.35,7.92-1.29,2.13-2.16,4.24-.63,6.18Z"></path><path d="M316.08,71.44c-2.86.83-5.32-.64-6.1-3.35-.57-1.98-.33-3.96-.12-6.05l.7-6.78c-3.32,2.94-6,6.18-8.68,9.6l-5.26,6.71c-.45.57-1.18.79-1.88.45-.47-.24-.77-.97-.55-1.65l2.76-8.61-4.42,5.26c-1.55,1.84-3.51,3.23-5.76,4.06s-4.55-.14-5.3-2.65c-1.26,2.86-3.29,5.25-6.11,6.56-2.41,1.12-4.97.38-6.25-1.91-2.97,1.06-7.14,1.82-8.6-.23-.58-.82-.75-1.84-.41-2.77l2.76-7.51c.87-2.35,2.25-4.41,2.38-7.16-3.05,2.02-6.71,4.03-8.54,7.12-1.38,3.44-4.35,13.47-7.3,12.58-1.93-.58-1.19-3.24-.34-5.5,1.12-2.96,3.12-5.23,4.83-7.85.86-1.31.34-3.51.11-4.88-1.12.06-1.85.58-2.69,1.1-2.82,1.78-5.12,4.07-7.15,6.74-2.86,3.77-5.28,7.69-7.54,11.84-.38.69-1.03.99-1.67.74-.69-.27-.71-1.05-.68-1.92-2.12,2.57-4.23,4.96-7.02,6.63s-6.12,1.09-7.8-1.83c-.93-1.63-1.08-3.5-1.01-5.51-4.35,5.6-11.04,9.35-18.08,8.11-3.89-.68-6.76-3.22-7.96-6.96-2.96-9.21,3.84-19.98,14.07-21.69,1.18-.2,2.33-.14,3.38.22,1.62.57,2.56,2.12,2.08,3.82-1.36,4.81-10.89,11.19-16.57,11.51-.66,4.64,1.02,9.21,5.87,10.09,7.48,1.36,14.07-3.76,18.16-9.89l2.67-7.12c.38-.51.35-1.13,0-1.61.38-.05.72-.11.91-.21.16-.08.33-.55.14-.65-.93.09-1.72-.1-2.22-.57-1.23-1.16-.31-3.7,1.13-5.14l3.48-3.47c.51-.51,1.44-.45,1.82.05.69.92-.61,2.13-.66,4.52l2.87-2.69c.63-.59,1.67-.54,2.25.17,1.38,1.72-2.36,3.49-4.66,7.25-2.73,4.46-4.53,9.38-5.23,14.56-.17,1.25-.07,2.52.4,3.57.57,1.25,1.81,1.65,2.99,1.09s2.27-1.33,3.28-2.27c4.07-3.77,7.04-8.35,9.31-13.4,1.04-2.3,1.86-4.49,2.08-7.01.07-.78.75-1.31,1.41-1.29.78.02,1.47.78,1.28,1.64l-1.61,7.48c3-4.06,7.2-8.64,11.84-10.25,1.53-.53,3.24.19,3.54,1.73l.48,2.49c2.35-2.07,4.66-4.03,7.46-5.45.84-.43,1.8-.49,2.53.02,2.12,1.46.33,5.24-.75,7.98l-3.66,9.26c-.76,1.91,2.91,1.48,5.91.5-1.13-7.26,7.19-20.23,13.09-16.8,1.22.71,1.55,1.97,1.96,3.4.22.77.97,1.15.77,2.27-.49,2.74-.94,7.71.4,8.77,1.2.95,5.28-2.05,6.82-3.97l7.62-9.58c.45-.56,1.18-.69,1.74-.46.63.26.87,1.09.61,1.85l-3.05,8.9c3.75-4.66,7.24-9.03,11.57-12.84.52-.46,1.04-.68,1.69-.58,1.7.25,1.7,3.11,1.39,5.52l-.78,5.96c-.18,1.39-.17,2.76.27,4.05.41,1.21,1.49,1.67,2.71,1.3,5.71-1.72,10.74-8.18,13.16-13.66.19-.44.43-1.29.03-1.61-.9-.4-2.11.35-3.21-.5,1.17-.64,2.93-1.17,4.27-.69,1.18.42,1.18,2.08.79,3.21-2.23,6.34-7.46,13.92-14.15,15.87ZM225.86,56.19c.21-.59.04-1.33-.02-1.82l-2.78,3.37c1-.24,2.14-.73,2.8-1.55ZM280.93,58.21c.06-.58-.22-1.14-.51-1.4-1-.89-2.7.19-3.99,1.56-2.98,3.15-4.99,7.17-5.29,11.63,5.38-2.15,9.25-6.18,9.8-11.78ZM208.07,59.71c.56-.68.94-1.46.97-2.18-.19-.3-.92-.29-1.36-.25-5.6.92-10.32,4.94-11.89,10.67,4.95-1.43,9.12-4.38,12.27-8.23ZM274.38,72.68c2.23-1.18,3.96-3.01,4.8-5.5-2.31,2.12-4.62,3.73-7.5,4.91.61.92,1.6,1.01,2.7.59Z"></path><path d="M147.11,6.46c-.26.69-.93.89-1.43.82-1.56-.23-.87-3.06.82-4.6.4-.37,1.05-.31,1.37-.05.35.29.37.81.18,1.32l-.94,2.51Z"></path><path d="M126.2.94c.3,1.24,0,2.56-.92,2.75-.5.1-1.06-.02-1.32-.54-.37-.74-.34-1.68-.02-2.42C124.18.23,124.63,0,125.06,0c.53,0,.99.33,1.14.94Z"></path></svg></h3>
+    </figure>
+    <div class="crew-bio" data-reveal>
+      <p>Hello! We’re Elias and Ida, a Swedish-Norwegian creative duo driven by our curiosity. Elias’s background in philosophy and project management brings fresh perspectives and clear direction. As a graphic designer and artist, Ida shapes ideas into brands with character and lasting expressions.</p>
+      <p>Together, we work across branding, art direction, animation and print. Elida was born while we were living in Nepal. Whether on a mountain trail, over a chessboard or deep in conversation, we love exploring new perspectives. That same curiosity guides our work: understanding your world before creating something for it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta" data-theme="light">
+  <div class="cta-stage">
+  <div class="cta-mark" aria-hidden="true"><svg class="logo" viewBox="0 0 1941.08 731.659" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M 690.145 148.308 L 642.807 148.308 L 642.807 731.49 L 690.145 731.49 L 690.145 148.308 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 1238.158 302.131 C 1191.491 231.252 1113.936 184.793 1026.322 184.793 C 883.993 184.793 768.173 307.349 768.173 457.955 C 768.173 608.561 883.993 731.117 1026.322 731.117 C 1113.975 731.117 1191.491 684.616 1238.158 613.779 L 1238.158 731.492 L 1285.496 731.492 L 1285.496 0 L 1238.158 0 L 1238.158 302.131 Z M 1026.282 681.026 C 910.029 681.026 815.472 580.97 815.472 457.955 C 815.472 334.94 910.029 234.884 1026.282 234.884 C 1142.536 234.884 1237.093 334.94 1237.093 457.955 C 1237.093 580.97 1142.536 681.026 1026.282 681.026 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 502.766 475.278 C 502.49 476.614 502.293 477.95 502.174 479.244 C 499.729 504.205 494.364 528.416 485.251 551.75 C 476.967 572.997 465.567 592.783 451.602 610.356 C 437.677 627.888 421.227 643.166 403.12 655.688 C 384.501 668.587 364.145 678.605 342.922 685.618 C 320.634 693.006 297.439 697.097 274.125 698.057 C 270.496 698.224 266.866 698.266 263.277 698.266 C 216.965 698.266 167.852 673.596 130.494 631.394 L 457.401 285.851 L 450.971 278.713 C 402.765 223.363 334.362 191.597 263.237 191.597 C 122.486 191.597 8.008 312.733 8.008 461.628 C 8.008 537.14 37.476 605.514 84.853 654.603 C 84.853 654.603 79.567 661.115 69.981 670.173 C 51.519 684.825 28.127 679.565 28.127 679.565 C 27.022 679.44 25.917 679.315 24.734 679.315 C 11.085 679.315 0 691.044 0 705.487 C 0 719.93 11.085 731.659 24.734 731.659 C 27.377 731.659 29.941 731.2 32.308 730.407 C 32.624 730.324 32.9 730.157 33.215 730.073 C 33.768 729.864 34.32 729.656 34.833 729.405 C 36.726 728.529 38.541 727.36 40.198 725.941 C 40.434 725.732 40.671 725.523 40.908 725.273 C 41.263 724.939 41.657 724.647 41.973 724.313 L 97.161 666.541 C 141.816 707.115 199.844 731.659 263.198 731.659 C 354.56 731.659 461.346 661.866 502.727 555.048 L 502.727 731.451 L 550.064 731.451 L 550.064 0 L 502.727 0 L 502.727 475.278 L 502.766 475.278 Z M 68.009 461.628 C 68.009 322.459 157.516 229.374 263.198 229.332 C 309.352 229.332 341.621 245.528 373.061 268.612 C 396.611 285.893 399.57 321.541 379.294 342.997 L 119.449 618.037 C 88.561 577.505 68.009 523.741 68.009 461.67 L 68.009 461.628 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 666.476 0 C 645.331 0 628.211 18.116 628.211 40.49 C 628.211 62.864 645.331 80.98 666.476 80.98 C 687.62 80.98 704.74 62.864 704.74 40.49 C 704.74 18.116 687.62 0 666.476 0 Z" fill="currentColor" fill-rule="nonzero"></path>
+  <path d="M 1936.861 708.741 C 1902.581 676.85 1866.249 624.672 1853.626 442.926 C 1848.458 368.708 1826.052 310.143 1785.657 267.566 C 1685.971 162.501 1524.234 162.292 1424.746 267.566 C 1374.292 320.955 1349.439 391.374 1350.149 461.501 L 1350.859 479.158 C 1355.317 541.271 1381.511 600.42 1424.746 649.425 C 1491.453 725.062 1666.286 781.623 1782.895 663.617 C 1812.678 633.479 1823.566 611.481 1834.651 584.557 L 1834.651 731.449 L 1928.814 731.449 C 1940.135 731.449 1945.382 716.63 1936.861 708.741 Z M 1832.876 496.523 C 1826.682 542.815 1795.321 585.267 1752.481 628.763 C 1678.436 703.941 1519.54 741.467 1439.223 638.656 C 1381.037 564.187 1377.724 411.16 1467.113 312.481 C 1558.12 212.049 1687.51 215.681 1765.42 291.276 C 1824.789 348.839 1842.067 427.69 1832.876 496.565 L 1832.876 496.523 Z" fill="currentColor" fill-rule="nonzero"></path></svg></div>
+  <div class="wrap cta-in">
+    <h2 class="cta-h2" data-reveal>Let’s find your <span class="rot rot-serif" data-rot data-words="voice,tone,story,shape,colour"><span class="rot-w">voice</span></span><br>in the noise.</h2>
+    <div class="cta-actions" data-reveal style="--i:1">
+      <a class="pill pill-dark big" href="mailto:contact@helloelida.com" data-magnet>Say hello</a>
+      <a class="cta-mail" href="mailto:contact@helloelida.com">contact@helloelida.com</a>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<footer class="foot" data-theme="light"><div class="wrap"><p>© 2026 Österman &amp; Naess</p><p>Org No: 559551-3838</p></div></footer>
+<script src="assets/site.js"></script>
+<script>
+  // ── Settings ─────────────────────────────────────────────
+  var ELIDA = {
+    glb: 'assets/socrates.glb',  // the 3D Socrates model
+    tracking: true,              // statue turns toward the cursor
+    depth: 1,                    // how far it turns (0.3 – 2)
+    yaw: 0                       // resting rotation, degrees
+  };
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+  const el = document.querySelector('[data-statue]');
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
+  renderer.setClearColor(0x000000, 0);
+  let dirty = true;
+  function applyDPR() { const rw = el.getBoundingClientRect().width; if (!rw || !el.clientWidth) return; const pr = Math.min(devicePixelRatio * rw / el.clientWidth, 2); if (Math.abs(pr - renderer.getPixelRatio()) > 0.005) { renderer.setPixelRatio(pr); dirty = true; } }
+  applyDPR();
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  renderer.domElement.style.cssText = 'display:block;width:100%;height:100%';
+  el.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const BASE_FOV = 28.5, baseTan = Math.tan(BASE_FOV * Math.PI / 360);
+  const camera = new THREE.PerspectiveCamera(BASE_FOV, 1, 0.1, 50);
+  camera.position.set(0, 0.25, 4.6);
+
+  scene.add(new THREE.HemisphereLight(0xfff4e6, 0x1c4149, 0.9));
+  const key = new THREE.DirectionalLight(0xfff1dc, 2.2);
+  key.position.set(2.5, 4, 3);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.camera.near = 1; key.shadow.camera.far = 12;
+  key.shadow.camera.left = -1.8; key.shadow.camera.right = 1.8; key.shadow.camera.top = 1.8; key.shadow.camera.bottom = -1.8;
+  key.shadow.bias = -0.0005; key.shadow.normalBias = 0.02;
+  scene.add(key);
+  const fill = new THREE.DirectionalLight(0xbfe3e6, 0.7); fill.position.set(-3, 1.5, 2); scene.add(fill);
+  const rim = new THREE.DirectionalLight(0x6fb3b8, 1.0); rim.position.set(-2, 2, -3); scene.add(rim);
+
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(6, 6), new THREE.ShadowMaterial({ color: 0x0b2a30, opacity: 0.28 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.y = -0.955; ground.receiveShadow = true;
+  scene.add(ground);
+
+  const rig = new THREE.Group(); scene.add(rig);
+  const marble = new THREE.MeshStandardMaterial({ color: 0xe8e1d3, roughness: 0.62, metalness: 0 });
+  let pts = null, frames = 0, sizedW = 0, sizedH = 0, drawn = false;
+  const last = { x: NaN, y: NaN };
+
+  new GLTFLoader().load(ELIDA.glb, (g) => {
+    const m = g.scene;
+    m.traverse(o => {
+      if (!o.isMesh) return;
+      o.castShadow = true; o.receiveShadow = true;
+      if (!o.material || !o.material.map) o.material = marble;
+      else { o.material.roughness = Math.min(o.material.roughness, 0.85); o.material.envMapIntensity = 1; }
+      if (!o.geometry.attributes.normal) o.geometry.computeVertexNormals();
+    });
+    const box = new THREE.Box3().setFromObject(m);
+    const c = box.getCenter(new THREE.Vector3());
+    m.position.set(-c.x, -box.min.y - 0.95, -c.z);
+    rig.add(m);
+    pts = samplePoints(m);
+    fit();
+    dirty = true;
+  }, undefined, () => console.warn('[Elida] 3D model did not load; keeping the image fallback. Check ELIDA.glb.'));
+
+  function pose(x, y) {
+    rig.rotation.y = ELIDA.yaw * Math.PI / 180 + x * 0.45;
+    rig.rotation.x = y * 0.16;
+    camera.position.set(x * 0.15, 0.25 + y * 0.35, 4.6);
+    camera.lookAt(0, -0.05, 0);
+  }
+  function samplePoints(m) {
+    rig.rotation.set(0, 0, 0); rig.updateMatrixWorld(true);
+    const out = [], v = new THREE.Vector3();
+    m.traverse(o => {
+      if (!o.isMesh) return;
+      const p = o.geometry.attributes.position, step = Math.max(1, Math.floor(p.count / 2500));
+      for (let i = 0; i < p.count; i += step) out.push(v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld).clone());
+    });
+    return out;
+  }
+  function fit() {
+    if (!pts) return;
+    const v = new THREE.Vector3(), N = 6; let max = 0;
+    camera.fov = BASE_FOV; camera.updateProjectionMatrix();
+    for (let i = 0; i <= N; i++) for (let j = 0; j <= N; j++) {
+      pose(ELIDA.depth * (2 * i / N - 1), ELIDA.depth * (2 * j / N - 1));
+      rig.updateMatrixWorld(true); camera.updateMatrixWorld(true);
+      for (const p of pts) { v.copy(p).applyMatrix4(rig.matrixWorld).project(camera); if (v.z < 1) max = Math.max(max, Math.abs(v.x), Math.abs(v.y)); }
+    }
+    camera.fov = 2 * Math.atan(baseTan * Math.max(1, max / 0.96)) * 180 / Math.PI;
+    camera.updateProjectionMatrix();
+  }
+  function resize() { const w = el.clientWidth, h = el.clientHeight; if (!w || !h) return; sizedW = w; sizedH = h; renderer.setSize(w, h, false); applyDPR(); camera.aspect = w / h; camera.updateProjectionMatrix(); fit(); dirty = true; }
+  addEventListener('resize', resize); addEventListener('load', resize); resize();
+  function draw() {
+    if (el.clientWidth !== sizedW || el.clientHeight !== sizedH) resize();
+    if (!sizedW || !sizedH) return;
+    if (++frames % 60 === 0) applyDPR();
+    const gz = window.elidaGaze || { x: 0, y: 0 };
+    const x = gz.x * ELIDA.depth, y = gz.y * ELIDA.depth;
+    if (!dirty && Math.abs(x - last.x) < 1e-4 && Math.abs(y - last.y) < 1e-4) return;
+    last.x = x; last.y = y; dirty = false;
+    pose(x, y);
+    renderer.render(scene, camera);
+    if (!drawn && pts) { drawn = true; window.elidaReady = true; const fb = document.querySelector('[data-statue-fallback]'); if (fb) fb.style.opacity = '0'; }
+  }
+  renderer.setAnimationLoop(draw); window.elidaDraw = draw;
+</script>
+</body>
+</html>
