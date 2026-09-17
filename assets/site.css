@@ -157,6 +157,13 @@ img { max-width: 100%; }
 .svc { background: var(--cream); }
 .svc .list { max-width: 1600px; padding-left: var(--gut); padding-right: var(--gut); }
 
+/* Services: the section title is set like the hero line, in the serif */
+/* Two thirds of the usual section gap above the title */
+.svc { padding-top: clamp(51px, 6.4vw, 107px); }
+.svc .sec-head { justify-content: center; text-align: center; }
+/* The three home-page section titles share one setting (case pages keep the small uppercase label) */
+.svc .label-lg, .work .label-lg, .studio-band .label-lg { font-family: var(--sans); font-size: clamp(22px, 4.03vw, 58px); line-height: 1; letter-spacing: -.02em; text-transform: none; }
+
 /* Studio */
 /* The label sits on a teal band; everything below the photo is cream (Figma "Studio": band 350 px of the 1920 frame) */
 .studio { background: var(--cream); padding-bottom: clamp(24px, 3.65vw, 70px); }
@@ -175,8 +182,8 @@ img { max-width: 100%; }
 .js .sig { clip-path: polygon(-14% 0, -2% 0, -14% 100%, -26% 100%); transition: clip-path 1.9s cubic-bezier(.45, .05, .55, .95) .45s; }
 .js .crew-sig.in .sig { clip-path: polygon(-14% 0, 120% 0, 108% 100%, -26% 100%); }
 .crew-bio { position: relative; width: 52.19%; margin: -12.97% 0 0 auto; padding: 5.09%; background: var(--orange); color: var(--paper); }
-.crew-bio p { margin: 0; font-size: clamp(16px, 2.2vw, 20px); line-height: 1.6; text-wrap: pretty; }
-.crew-bio p + p { margin-top: 1.6em; }
+.crew-bio p { margin: 0; font-family: "Fira Mono", ui-monospace, Menlo, monospace; font-size: clamp(15px, 2.1vw, 19px); line-height: 1.75; text-wrap: pretty; }
+.crew-bio p + p { margin-top: 1.75em; }
 
 /* "Click into any project to learn more!" — pinned by the Selected work label (Figma "Selected work note") */
 .sec-head { position: relative; container-type: inline-size; }
@@ -366,6 +373,13 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .sec-head { flex-direction: column; align-items: flex-start; }
   .mani-stage { aspect-ratio: auto; display: grid; grid-template-columns: minmax(0, 1fr); padding: 96px var(--gut) 88px; }
   .mani-h2 { position: static; width: auto; font-size: clamp(40px, 12vw, 64px); }
+  .svc .sec-head { align-items: center; }
+  .svc .label-lg, .work .label-lg, .studio-band .label-lg { font-size: min(7.5vw, 49px); }
+  /* "What can we help you with?" holds one line on a phone */
+  .svc .label-lg { white-space: nowrap; }
+  /* Watermark and footer centred on the page rather than on the viewport (vw can differ from the content width on iOS) */
+  .cta-stage { width: 92%; }
+  .foot .wrap { align-items: center; }
   .gif { position: static; aspect-ratio: 1; height: auto; }
   .mani-q { white-space: normal; }
   .wk-a { grid-template-columns: 64px minmax(0, 1fr) 44px; grid-template-areas: "th name ar" "th tags ar"; align-items: center; row-gap: 10px; padding: 20px 0; }
@@ -376,8 +390,7 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .wk-prev { display: none; }
   .crew-photo { aspect-ratio: 4 / 3; }
   .crew-bio { width: 90%; margin: -16% auto 0 0; padding: 26px 24px 30px; }
-  .crew-bio p { font-family: "Fira Mono", ui-monospace, Menlo, monospace; font-size: 14px; line-height: 1.75; }
-  .crew-bio p + p { margin-top: 1.75em; }
+  .crew-bio p { font-size: 14px; }
   .crew-sig-e { left: 8%; width: 28%; }
   .crew-sig-i { left: 64%; width: 24%; }
   .sec-head.has-note { margin-bottom: clamp(48px, 6vw, 96px); }
