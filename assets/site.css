@@ -92,10 +92,13 @@ img { max-width: 100%; }
 @keyframes rise { to { opacity: 1; transform: none; } }
 .statue-box { --sh: min(76vh, 920px); position: absolute; z-index: 2; left: 50%; bottom: 44px; height: var(--sh); width: calc(var(--sh) * .919); margin-left: calc(var(--sh) * -.4595); pointer-events: none; }
 .statue-box, .statue-box * { pointer-events: none !important; }
-.statue-in { position: absolute; inset: 0; animation: statueIn 1.6s var(--ease) both .15s; }
+.statue-in { position: absolute; inset: 0; }
+.no-js .statue-in { animation: statueIn 1.6s var(--ease) both .15s; }
 @keyframes statueIn { from { opacity: 0; transform: translateY(40px) scale(.97); } }
 .statue-still, .statue { position: absolute; inset: 0; width: 100%; height: 100%; }
-.statue-still { transition: opacity .3s ease; }
+.statue-still { object-fit: contain; transition: opacity .3s ease; }
+.js .statue { opacity: 0; transform: translateY(34px) scale(.98); transition: opacity 1s ease, transform 1.5s var(--ease); }
+.js .statue.ready { opacity: 1; transform: none; }
 .fc-layer { position: absolute; inset: 0; pointer-events: none; }
 .fc { position: absolute; left: 0; top: 0; z-index: 1; width: clamp(90px, 9vw, 190px); aspect-ratio: 1; pointer-events: auto; will-change: transform; container-type: inline-size; }
 .fc:hover { z-index: 5 !important; }

@@ -10,7 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- PREVIEW ONLY: remove this line at launch -->
 <meta name="robots" content="noindex">
-<title>Elida — Become who you are</title>
+<title>Elida — Scandinavian design studio</title>
+<meta property="og:title" content="Elida — Scandinavian design studio">
+<meta property="og:description" content="Strategic communication, brand identity, illustration and motion.">
+<meta property="og:type" content="website">
 <meta name="copyright" content="© 2026 Österman & Næss (Elida). All rights reserved.">
 <meta name="description" content="Elida — a design studio. Strategic communication, brand identity, illustration and motion.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -409,6 +412,9 @@
   import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
   const el = document.querySelector('[data-statue]');
+  // WebGL is available, so the still frame is only a fallback — drop it now and let the canvas fade in alone.
+  const fbNow = document.querySelector('[data-statue-fallback]');
+  if (fbNow) { fbNow.style.transition = 'none'; fbNow.style.opacity = '0'; }
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
   renderer.setClearColor(0x000000, 0);
   let dirty = true;
@@ -505,7 +511,7 @@
     last.x = x; last.y = y; dirty = false;
     pose(x, y);
     renderer.render(scene, camera);
-    if (!drawn && pts) { drawn = true; window.elidaReady = true; const fb = document.querySelector('[data-statue-fallback]'); if (fb) fb.style.opacity = '0'; }
+    if (!drawn && pts) { drawn = true; window.elidaReady = true; const fb = document.querySelector('[data-statue-fallback]'); if (fb) fb.style.opacity = '0'; el.classList.add('ready'); }
   }
   renderer.setAnimationLoop(draw); window.elidaDraw = draw;
 </script>

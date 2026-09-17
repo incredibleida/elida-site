@@ -235,20 +235,29 @@
   var st = document.querySelector('[data-statue]');
   if (st) {
     var gaze = window.elidaGaze = { x: 0, y: 0 }, target = { x: 0, y: 0 };
-    addEventListener('mousemove', function (e) {
+    var lastAim = 0;
+    function aim(px, py) {
       var r = st.getBoundingClientRect();
       var cx = r.left + r.width / 2, cy = r.top + r.height * 0.21;
-      var dx = e.clientX - cx, dy = e.clientY - cy;
+      var dx = px - cx, dy = py - cy;
       var spanX = dx < 0 ? Math.max(cx, 80) : Math.max(innerWidth - cx, 80);
       var spanY = dy < 0 ? Math.max(cy, 80) : Math.max(innerHeight - cy, 80);
       target.x = Math.max(-1, Math.min(1, dx / spanX));
       target.y = Math.max(-1, Math.min(1, dy / spanY));
-    });
+      lastAim = performance.now();
+    }
+    addEventListener('mousemove', function (e) { aim(e.clientX, e.clientY); });
     document.addEventListener('mouseleave', function () { target.x = 0; target.y = 0; });
+    // Touch: he follows the finger — while you drag, tap or scroll over him.
+    function touchAim(e) { var t = e.touches && e.touches[0]; if (t) aim(t.clientX, t.clientY); }
+    addEventListener('touchstart', touchAim, { passive: true });
+    addEventListener('touchmove', touchAim, { passive: true });
     var lastT = performance.now();
     function step(now) {
       var k = 1 - Math.pow(0.94, Math.min(64, now - lastT) / 16.7); lastT = now;
       var on = window.ELIDA && ELIDA.tracking && !reduce && window.elidaReady;
+      // With no pointer to follow (touch screens), he looks slowly around instead of freezing.
+      if (on && !canHover && now - lastAim > 2200) { target.x = Math.sin(now / 3100) * 0.55; target.y = Math.sin(now / 4700) * 0.3; }
       var tx2 = on ? target.x : 0, ty2 = on ? target.y : 0;
       gaze.x += (tx2 - gaze.x) * k; gaze.y += (ty2 - gaze.y) * k;
       if (window.elidaDraw) window.elidaDraw();
