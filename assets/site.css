@@ -134,8 +134,11 @@ img { max-width: 100%; }
 .work { position: relative; background: #E58A4E; color: var(--paper); }
 .work::before { content: ""; position: absolute; inset: 0; background: #E58A4E url(band.webp) 0 100% / cover no-repeat; transform: scaleX(-1); }
 .work > .wrap { position: relative; }
+/* The work background runs up behind the studio photo's foot, so the orange bio card sits on it; --crew-tail (set in site.js) is the depth from the photo's bottom edge to the end of the studio section */
+.studio { position: relative; z-index: 1; background: transparent; }
+.work { margin-top: calc(-1 * var(--crew-tail, 0px)); padding-top: calc(clamp(96px, 12vw, 200px) + var(--crew-tail, 0px)); }
 .wk-box { position: relative; }
-.wk-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid rgba(255, 255, 255, .5); }
+.wk-list { list-style: none; margin: 0; padding: 0; }
 .wk-row { position: relative; border-top: 1px solid rgba(255, 255, 255, .5); }
 .wk-a { display: grid; grid-template-columns: clamp(44px, 4.2vw, 80px) minmax(0, 1fr) minmax(0, 36%) var(--cw); grid-template-areas: "num name tags ar"; align-items: center; column-gap: clamp(16px, 2.3vw, 44px); padding: clamp(18px, 1.7vw, 33px) 0; cursor: pointer; }
 .wk-num { grid-area: num; font-size: clamp(26px, 3.65vw, 70px); line-height: 1; letter-spacing: .04em; color: var(--orange); }
@@ -159,14 +162,14 @@ img { max-width: 100%; }
 
 /* Services: the section title is set like the hero line, in the serif */
 /* Two thirds of the usual section gap above the title */
-.svc { padding-top: clamp(51px, 6.4vw, 107px); }
+.svc { padding-top: clamp(51px, 6.4vw, 107px); padding-bottom: clamp(72px, 9vw, 150px); }
 .svc .sec-head { justify-content: center; text-align: center; }
 /* The three home-page section titles share one setting (case pages keep the small uppercase label) */
 .svc .label-lg, .work .label-lg, .studio-band .label-lg { font-family: var(--sans); font-size: clamp(22px, 4.03vw, 58px); line-height: 1; letter-spacing: -.02em; text-transform: none; }
 
 /* Studio */
 /* The label sits on a teal band; everything below the photo is cream (Figma "Studio": band 350 px of the 1920 frame) */
-.studio { background: var(--cream); padding-bottom: clamp(24px, 3.65vw, 70px); }
+.studio { background: transparent; padding-bottom: clamp(24px, 3.65vw, 70px); }
 .studio-band { background: var(--deep); color: var(--paper); padding: clamp(56px, 8.54vw, 164px) 0; }
 .studio-band .sec-head { margin-bottom: 0; }
 /* Say hello to Elida: a full-bleed photo of the pair, their signatures written over it, and the bio on an orange panel that laps the bottom-right corner (Figma "Studio", photo 1920 × 1280) */
@@ -211,28 +214,28 @@ img { max-width: 100%; }
 .foot { background: var(--cream); color: var(--ink); padding: clamp(44px, 4.5vw, 80px) 0; }
 .foot .wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
 .foot p { margin: 0; font-size: 13px; letter-spacing: .02em; }
+/* On wide screens the closing section plus footer fill the window exactly, with the wordmark block centred between the nav and the footer */
+@media (min-width: 901px) {
+  .cta { display: flex; flex-direction: column; justify-content: center; min-height: calc(100svh - var(--foot-h, 170px)); padding: clamp(72px, 6vw, 110px) 0 0; box-sizing: border-box; }
+  .foot { padding: clamp(28px, 2.6vw, 48px) 0; }
+}
 
 /* Case page — one template for every project: lighter cream page, project-tinted image sections, composited mock-ups */
 body.case, body.case .foot { background: #FFFCF6; }
 .case-head { padding: clamp(150px, 12.5vw, 240px) 0 clamp(56px, 4.4vw, 84px); }
-/* The head is two columns: title on the left, every project as a thumbnail on the right */
-.case-head .wrap { display: grid; grid-template-columns: minmax(0, 60.2%) minmax(0, 1fr); column-gap: clamp(40px, 4vw, 80px); }
-.case-head .label-lg { grid-area: 1 / 1; }
-.case-h1 { grid-area: 2 / 1; }
-.case-intro { grid-area: 3 / 1 / 4 / -1; }
-.case-thumbs { grid-area: 1 / 2 / 3 / 3; align-self: start; justify-self: end; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(6px, .73vw, 14px); width: min(100%, 420px); }
+/* Top row: the "Selected work" pill (back to the home list) on the left, all eight projects in one row on the right, a hairline under both */
+.case-top { display: flex; justify-content: space-between; align-items: center; gap: clamp(24px, 3vw, 60px); padding-bottom: clamp(20px, 2.6vw, 48px); margin-bottom: clamp(32px, 4.1vw, 76px); border-bottom: 1px solid rgba(24, 24, 23, .2); }
+.pill-label { height: clamp(40px, 2.5vw, 48px); padding: 0 clamp(18px, 1.25vw, 24px); font-size: clamp(13px, .85vw, 16px); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.case-thumbs { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: clamp(6px, 1vw, 16px); width: min(60%, 1000px); flex: none; }
 .ct { display: block; aspect-ratio: 1; border-radius: 3px; overflow: hidden; opacity: .72; transition: opacity .35s var(--ease), transform .35s var(--ease); }
 .ct img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ct.is-current { opacity: 1; box-shadow: 0 0 0 1px var(--orange); }
 a.ct:hover { opacity: 1; transform: translateY(-3px); }
 a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
-.case-head .label-lg { margin-bottom: clamp(24px, 3.3vw, 63px); }
 .case-h1 { margin: 0 0 clamp(32px, 2.8vw, 53px); font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 9.9vw, 190px); line-height: .95; letter-spacing: -.03em; }
 .case-h1 em { font-style: italic; }
 .case-intro { display: grid; grid-template-columns: minmax(0, 60.2%) minmax(0, 1fr); gap: 32px clamp(40px, 4vw, 80px); align-items: start; }
 .case-p { margin: 0; font-size: clamp(17px, 1.35vw, 25.9px); line-height: 1.74; color: rgba(0, 0, 0, .6); text-wrap: pretty; }
-.case-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; padding-top: .4em; }
-.case-tag { display: inline-block; padding: 5px 15px 6.25px; border: 1px solid rgba(24, 24, 23, .2); border-radius: 999px; font-size: clamp(14px, 1.04vw, 20px); line-height: 1.06; color: var(--ink); white-space: nowrap; }
 .case-tint { background: var(--proj-bg, #F1F3FF); }
 .case-cover-sec { padding: clamp(16px, 2.08vw, 40px) clamp(14px, 2.03vw, 39px) 0; }
 .case-cover { position: relative; margin: 0; aspect-ratio: var(--car, 1844 / 901); border-radius: clamp(10px, 1.04vw, 20px); overflow: hidden; background: var(--cbg, rgba(0, 0, 0, .06)); }
@@ -288,7 +291,7 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 
 /* Case pages, round 13: credits, hand-written labels, Spotify panel, storyboard cards, drawn foxes, tilted print */
 .case-right { display: flex; flex-direction: column; align-items: flex-end; }
-.case-credits { margin: clamp(28px, 3vw, 58px) 0 0; display: flex; flex-direction: column; gap: clamp(14px, 1.25vw, 24px); text-align: right; font-size: clamp(13px, 1.25vw, 24px); line-height: 1.1; letter-spacing: .06em; text-transform: uppercase; }
+.case-credits { margin: .3em 0 0; display: flex; flex-direction: column; gap: clamp(14px, 1.25vw, 24px); text-align: right; font-size: clamp(13px, 1.25vw, 24px); line-height: 1.1; letter-spacing: .06em; text-transform: uppercase; }
 .case-credits div { display: flex; flex-direction: column; }
 .case-credits dt { font-weight: 700; }
 .case-credits dd { margin: 0; }
@@ -399,7 +402,6 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .hand-line { left: 18%; top: 2.5em; width: 58%; }
   /* Case head order on a phone: title, tags, description, credits in two columns */
   .case-right { display: contents; }
-  .case-tags { order: -1; }
   .case-credits { order: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; text-align: left; }
   .hand-label, .panel, .mock.wide { grid-column: 1 / -1; }
   .hand-label { position: static; transform: none; padding: 8px 0 0; }
@@ -408,8 +410,8 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .case-head .wrap { display: block; }
   .case-intro { grid-template-columns: minmax(0, 1fr); }
   /* The project overview moves down to just above "Next project" */
-  .case-thumbs { width: auto; margin: clamp(40px, 8vw, 64px) var(--gut) 0; }
-  .case-tags { justify-content: flex-start; padding-top: 0; }
+  .case-thumbs { grid-template-columns: repeat(4, minmax(0, 1fr)); width: auto; margin: clamp(40px, 8vw, 64px) var(--gut) 0; }
+  .case-top { padding-bottom: 22px; margin-bottom: 30px; }
   .case-cover:not(.video) { aspect-ratio: 4 / 3; }
   .cover-logo { width: calc(var(--lw, 30%) * 1.7); }
   .line { grid-column: 1 / -1; }
@@ -474,6 +476,7 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
     .tr[aria-expanded="true"] .plus { transform: rotate(45deg); }
     .body { grid-area: body; height: 0; overflow: hidden; transition: height .5s cubic-bezier(.4, 0, .2, 1); }
     .body p { margin: 0; padding: 22px 0 0; max-width: 560px; font-weight: 400; font-size: 20px; line-height: 1.6; color: #181817; opacity: .75; text-wrap: pretty; transition: opacity .4s ease .1s; }
+    .body p + p { padding-top: 1em; }
     .body[aria-hidden="true"] p { opacity: 0; transition-delay: 0s; }
     .more { grid-area: more; height: 0; overflow: hidden; transition: height .5s cubic-bezier(.4, 0, .2, 1); }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: min(2.4cqw, 34px) 0 6px; transition: opacity .4s ease .1s; }

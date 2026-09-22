@@ -107,10 +107,21 @@
     var small = phone.matches;
     var cta = document.querySelector('[data-hero-cta]'), sub = document.querySelector('.hero-sub'), ring = document.querySelector('[data-ring]');
     if (cta && ring && sub) { if (small) { if (cta.parentNode !== hero) hero.insertBefore(cta, ring); } else if (cta.parentNode !== sub) sub.appendChild(cta); }
-    var th = document.querySelector('.case-thumbs'), next = document.querySelector('.case-next'), head = document.querySelector('.case-head .wrap'), main = next && next.parentNode;
+    var th = document.querySelector('.case-thumbs'), next = document.querySelector('.case-next'), head = document.querySelector('.case-top'), main = next && next.parentNode;
     if (th && next && head) { if (small) { if (th.parentNode !== main) main.insertBefore(th, next); } else if (th.parentNode !== head) head.appendChild(th); }
   }
   placeForWidth();
+  // How far the studio section runs below its photo; the work section starts that far up so its background fills the space.
+  var studioSec = document.getElementById('studio'), crewPhoto = document.querySelector('.crew-photo');
+  function crewTail() { if (!studioSec || !crewPhoto) return; var t = studioSec.getBoundingClientRect().bottom - crewPhoto.getBoundingClientRect().bottom; document.documentElement.style.setProperty('--crew-tail', Math.max(0, Math.round(t)) + 'px'); }
+  crewTail();
+  if ('ResizeObserver' in window && studioSec) new ResizeObserver(crewTail).observe(studioSec);
+  addEventListener('load', crewTail);
+  // Footer height, so the closing section can take exactly the rest of the window.
+  var footEl = document.querySelector('.foot');
+  function footH() { if (footEl) document.documentElement.style.setProperty('--foot-h', Math.round(footEl.getBoundingClientRect().height) + 'px'); }
+  footH();
+  if ('ResizeObserver' in window && footEl) new ResizeObserver(footH).observe(footEl);
   if (phone.addEventListener) phone.addEventListener('change', placeForWidth);
 
   // Selected work: hovering a title's letters floats that project's cover beside the cursor; it follows the cursor and leaves with it.
