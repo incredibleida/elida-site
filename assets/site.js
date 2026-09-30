@@ -111,19 +111,6 @@
     if (th && next && head) { if (small) { if (th.parentNode !== main) main.insertBefore(th, next); } else if (th.parentNode !== head) head.appendChild(th); }
   }
   placeForWidth();
-  // Studio bio: the plus reveals the rest of the story
-  var bioBtn = document.querySelector('[data-bio-toggle]'), bioMore = document.getElementById('bio-more');
-  if (bioBtn && bioMore) bioBtn.addEventListener('click', function () {
-    var open = bioBtn.getAttribute('aria-expanded') !== 'true';
-    bioBtn.setAttribute('aria-expanded', open); bioBtn.setAttribute('aria-label', open ? 'Show less' : 'Read more');
-    bioMore.classList.toggle('open', open); bioMore.setAttribute('aria-hidden', !open);
-  });
-  // How far the studio section runs below its photo; the work section starts that far up so its background fills the space.
-  var studioSec = document.getElementById('studio'), crewPhoto = document.querySelector('.crew-photo');
-  function crewTail() { if (!studioSec || !crewPhoto) return; var t = studioSec.getBoundingClientRect().bottom - crewPhoto.getBoundingClientRect().bottom; document.documentElement.style.setProperty('--crew-tail', Math.max(0, Math.ceil(t)) + 'px'); }
-  crewTail();
-  if ('ResizeObserver' in window && studioSec) new ResizeObserver(crewTail).observe(studioSec);
-  addEventListener('load', crewTail);
   // Footer height, so the closing section can take exactly the rest of the window.
   var footEl = document.querySelector('.foot');
   function footH() { if (footEl) document.documentElement.style.setProperty('--foot-h', Math.round(footEl.getBoundingClientRect().height) + 'px'); }
