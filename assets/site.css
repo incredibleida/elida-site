@@ -163,7 +163,7 @@ img { max-width: 100%; }
 
 /* Services: the section title is set like the hero line, in the serif */
 /* Two thirds of the usual section gap above the title */
-.svc { padding-top: clamp(51px, 6.4vw, 107px); padding-bottom: clamp(48px, calc(9vw - 24px), 126px); }
+.svc { padding-top: clamp(28px, 2.5vw, 48px); padding-bottom: clamp(28px, 3vw, 56px); }
 .svc .sec-head { justify-content: center; text-align: center; }
 /* The three home-page section titles share one setting (case pages keep the small uppercase label) */
 .svc .label-lg, .work .label-lg { font-family: var(--sans); font-size: clamp(22px, 4.03vw, 58px); line-height: 1; letter-spacing: -.02em; text-transform: none; }
@@ -561,8 +561,8 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .js .ks-hero .cover-logo { transform: translate(-50%, -50%); }
 }
 
-/* Testimonials (home, under Selected work): a short band. Small uppercase label; each slide is the client (round photo, name, role) on the left and the quote on the right with an Instrument Serif mark. Sideways slider, one quote per slide. */
-.tst { background: var(--cream); color: var(--ink); padding: clamp(56px, 5.2vw, 100px) 0 clamp(64px, 6vw, 116px); }
+/* Testimonials (home, above the About us photo): a short band. Small uppercase label; each slide is the client (round photo, name, role) on the left and the quote on the right with an Instrument Serif mark. Sideways slider, one quote per slide. */
+.tst { background: var(--cream); color: var(--ink); padding: clamp(44px, 4.5vw, 84px) 0 clamp(64px, 6vw, 116px); border-top: 1px solid rgba(24, 24, 23, .2); }
 .tst-h { margin: 0 0 clamp(16px, 2.4vw, 46px); text-align: center; font-family: var(--sans); font-weight: 400; font-size: clamp(15px, 1.34vw, 26px); line-height: 1.2; letter-spacing: .12em; text-transform: uppercase; }
 .tst-box { position: relative; }
 /* Headroom inside the slider so the tall quote mark is never clipped */
