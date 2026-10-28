@@ -359,3 +359,52 @@
       var raf; addEventListener('resize', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(balanceAll); });
       window.elidaBalance = balanceAll;
     })();
+
+/* Compass: the orange needle turns around the ring's centre so its sharpest corner (top right, 49°) points at the cursor; it eases there and settles back to the design pose when the cursor leaves */
+(function () {
+  var fig = document.querySelector('.ks-compass'), svg = fig && fig.querySelector('.cmp-svg'), needle = svg && svg.querySelector('.cmp-needle');
+  if (!needle || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var CX = 960, CY = 591, TIP = -36.06, ang = 0, target = 0, raf = 0, inView = false, pt = svg.createSVGPoint();
+  function aim(x, y) {
+    var m = svg.getScreenCTM(); if (!m) return;
+    pt.x = x; pt.y = y; var p = pt.matrixTransform(m.inverse());
+    var dx = p.x - CX, dy = p.y - CY;
+    if (dx * dx + dy * dy < 400) return;                 // dead centre: hold the last heading
+    target = Math.atan2(dy, dx) * 180 / Math.PI - TIP;   // turn so the sharpest corner faces the cursor
+    go();
+  }
+  function step() {
+    var d = ((target - ang) % 360 + 540) % 360 - 180;    // shortest way round
+    ang += d * 0.09;
+    needle.setAttribute('transform', 'rotate(' + ang.toFixed(2) + ' ' + CX + ' ' + CY + ')');
+    raf = Math.abs(d) > 0.05 ? requestAnimationFrame(step) : 0;
+  }
+  function go() { if (!raf) raf = requestAnimationFrame(step); }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; if (!inView) { target = 0; go(); } }).observe(fig);
+  addEventListener('pointermove', function (e) { if (inView) aim(e.clientX, e.clientY); }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', function () { target = 0; go(); });
+  fig.addEventListener('pointerdown', function (e) { aim(e.clientX, e.clientY); });
+})();
+
+/* Testimonials: swipe, drag or use the arrows; the arrows show only where there is somewhere to go */
+(function () {
+  var box = document.querySelector('[data-tst]'); if (!box) return;
+  var track = box.querySelector('.tst-track'), slides = track.children, next = box.querySelector('[data-tst-next]'), prev = box.querySelector('[data-tst-prev]');
+  var n = track.querySelectorAll('.tst-slide').length;
+  function idx() { return Math.round(track.scrollLeft / track.clientWidth); }
+  function sync() { var i = idx(); prev.hidden = i <= 0; next.hidden = i >= n - 1; }
+  function go(d) { track.scrollTo({ left: (idx() + d) * track.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
+  next.addEventListener('click', function () { go(1); });
+  prev.addEventListener('click', function () { go(-1); });
+  track.addEventListener('scroll', function () { clearTimeout(track._t); track._t = setTimeout(sync, 60); }, { passive: true });
+  track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } });
+  // Mouse drag (touch and trackpads scroll natively)
+  var down = false, sx = 0, sl = 0, si = 0, moved = false;
+  track.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button) return; down = true; moved = false; sx = e.clientX; sl = track.scrollLeft; si = idx(); });
+  addEventListener('pointermove', function (e) { if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) { moved = true; track.classList.add('dragging'); } track.scrollLeft = sl - dx; });
+  addEventListener('pointerup', function (e) { if (!down) return; down = false; track.classList.remove('dragging'); if (moved) { var dx = e.clientX - sx, t = Math.max(0, Math.min(n - 1, si + (Math.abs(dx) > track.clientWidth * .12 ? (dx < 0 ? 1 : -1) : 0))); track.scrollTo({ left: t * track.clientWidth, behavior: 'smooth' }); } });
+  track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); moved = false; } }, true);
+  addEventListener('resize', sync);
+  if (n < 2) { next.hidden = prev.hidden = true; return; }
+  sync();
+})();

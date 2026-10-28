@@ -217,7 +217,8 @@ body.case, body.case .foot { background: #FFFCF6; }
 /* Top row: the "Selected work" pill (back to the home list) on the left, all eight projects in one row on the right, a hairline under both */
 .case-top { display: flex; justify-content: space-between; align-items: center; gap: clamp(24px, 3vw, 60px); padding-bottom: clamp(20px, 2.6vw, 48px); margin-bottom: clamp(32px, 4.1vw, 76px); border-bottom: 1px solid rgba(24, 24, 23, .2); }
 .pill-label { height: clamp(40px, 2.5vw, 48px); padding: 0 clamp(18px, 1.25vw, 24px); font-size: clamp(13px, .85vw, 16px); font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
-.case-thumbs { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: clamp(6px, 1vw, 16px); width: min(60%, 1000px); flex: none; }
+/* Nine projects in one row (Kamben Signal added Oct 2026) */
+.case-thumbs { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: clamp(6px, 1vw, 16px); width: min(66%, 1120px); flex: none; }
 .ct { display: block; aspect-ratio: 1; border-radius: 3px; overflow: hidden; opacity: .72; transition: opacity .35s var(--ease), transform .35s var(--ease); }
 .ct img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ct.is-current { opacity: 1; box-shadow: 0 0 0 1px var(--orange); }
@@ -302,6 +303,11 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 .case-visit-a { display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px 10px; border-radius: 999px; background: var(--ink); color: var(--paper); font-size: clamp(13px, .9vw, 17px); line-height: 1.1; text-decoration: none; white-space: nowrap; transition: opacity .3s; }
 .case-visit-a:hover { opacity: .88; color: var(--paper); }
 .case-visit-a svg { width: 13px; height: 13px; flex: none; }
+/* Photo credit under the visit link: one italic line */
+.case-photo { margin: 6px 0 0; font-style: italic; font-size: clamp(13px, 1.05vw, 20px); line-height: 1.3; text-align: right; }
+/* The credit never sets the width: it wraps within the button's width and lines up with its edge */
+.case-visit:has(.case-photo) { display: grid; grid-template-columns: max-content; justify-content: end; }
+.case-visit:has(.case-photo) .case-photo { width: 0; min-width: 100%; }
 .case-p.todo { color: rgba(24, 24, 23, .45); font-style: italic; }
 .hand-label { left: 0; width: 100%; margin: 0; text-align: center; font-family: "Nothing You Could Do", cursive; font-size: clamp(26px, 3.65vw, 70px); line-height: 1; letter-spacing: .086em; color: #fff; transform: rotate(-1.4deg); }
 .js .mock.hand-label.in { animation-name: mockFade; }
@@ -362,7 +368,8 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .hero-sub { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 14px; }
   .statue-box { position: relative; left: auto; bottom: auto; flex: 1 1 auto; width: 100%; min-height: min(52svh, 96vw); height: auto; margin: 0; }
   .hero > .hero-cta { align-self: flex-end; padding: 0 20px 18px; }
-  .fc-layer { position: relative; inset: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 0 20px 20px; pointer-events: auto; }
+  /* Nine covers: a 3 × 3 grid */
+  .fc-layer { position: relative; inset: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 20px 20px; pointer-events: auto; }
   .fc { position: static; width: auto; }
   .fc-card { box-shadow: none; }
   .fc-info { display: none; }
@@ -411,6 +418,8 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   /* Case head order on a phone: title, tags, description, credits in two columns */
   .case-right { display: contents; }
   .case-visit { order: 2; align-items: flex-start; margin-top: 26px; }
+  .case-visit:has(.case-photo) { justify-content: start; }
+  .case-photo { text-align: left; }
   .case-credits { order: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; text-align: left; }
   /* On a phone: left-aligned, smaller pills, set off by a hairline so the head stays calm */
   .case-deliv { order: 2; align-items: flex-start; gap: 10px; margin-top: 4px; padding-top: 22px; border-top: 1px solid rgba(24, 24, 23, .15); }
@@ -426,7 +435,7 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .case-head .wrap { display: block; }
   .case-intro { grid-template-columns: minmax(0, 1fr); }
   /* The project overview moves down to just above "Next project" */
-  .case-thumbs { grid-template-columns: repeat(4, minmax(0, 1fr)); width: auto; margin: clamp(40px, 8vw, 64px) var(--gut) 0; }
+  .case-thumbs { grid-template-columns: repeat(5, minmax(0, 1fr)); width: auto; margin: clamp(40px, 8vw, 64px) var(--gut) 0; }
   .case-top { padding-bottom: 22px; margin-bottom: 30px; }
   .case-cover:not(.video) { aspect-ratio: 4 / 3; }
   .cover-logo { width: calc(var(--lw, 30%) * 1.7); }
@@ -515,4 +524,85 @@ a.ct:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
       .tag { padding: 5px 12px; font-size: clamp(12px, 3.6cqw, 14px); }
     }
     @media (prefers-reduced-motion: reduce) { .plus, .body, .body p, .more, .tags, .num, .title { transition: none; } }
-  
+
+/* Kamben Signal (work/kamben-signal): full-bleed hero, mock-ups on sage, posts on contour lines, compass with a cursor-following needle */
+.ks-hero { position: relative; margin: 0; aspect-ratio: 1920 / 1202; overflow: hidden; background: #CEDDD2; }
+.ks-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ks-shade { position: absolute; inset: 0; background: #000; opacity: var(--o, .2); pointer-events: none; }
+.ks-hero .cover-logo { --lw: 24.27%; filter: none; }
+.js .ks-hero .cover-logo { opacity: 0; transform: translate(-50%, -44%); transition: opacity .9s var(--ease) .6s, transform .9s var(--ease) .6s; }
+.js .ks-hero.in .cover-logo { opacity: 1; transform: translate(-50%, -50%); }
+.ks-trail { background: #FDFBF3 url(work/kamben-contour.svg) center / cover no-repeat; }
+.ks-post { border-radius: clamp(5px, .52vw, 10px); overflow: hidden; box-shadow: 0 5px 7px rgba(0, 0, 0, .1); transition: transform .7s var(--ease), box-shadow .7s var(--ease); }
+.ks-post img { border-radius: inherit; }
+.ks-post:hover { transform: translateY(-1.2%); box-shadow: 0 30px 60px -28px rgba(0, 0, 0, .35); }
+.ks-compass { position: relative; margin: 0; aspect-ratio: 1920 / 1202; overflow: hidden; background: #3E4A3C; }
+.ks-compass > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cmp-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ks-compass h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.js .cmp-ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 960px 591px; transition: stroke-dashoffset 2.2s cubic-bezier(.45, 0, .2, 1) .5s; }
+.js .ks-compass.in .cmp-ring { stroke-dashoffset: 0; }
+.js .cmp-tri { transform-box: fill-box; transform-origin: 50% 60%; transform: rotate(-38deg) scale(.9); opacity: 0; transition: transform 2.4s cubic-bezier(.2, .9, .25, 1.15) 1s, opacity .8s ease 1s; }
+.js .ks-compass.in .cmp-tri { transform: none; opacity: 1; }
+.js .cmp-txt { opacity: 0; transition: opacity 1s ease 1.9s; }
+.js .ks-compass.in .cmp-txt { opacity: 1; }
+@media (max-width: 900px) {
+  .ks-hero, .ks-compass { aspect-ratio: 4 / 3; }
+  .ks-hero .cover-logo { width: 46%; }
+  .ks-mocks .mock.m-slide { grid-column: auto; width: 100%; justify-self: center; }
+  .ks-mocks { grid-template-columns: minmax(0, 3.2fr) minmax(0, 1fr); padding-top: 48px; padding-bottom: 56px; }
+  .ks-mocks .mock.m-rise { grid-column: auto; }
+  .ks-trail { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 56px var(--gut) 64px; background-size: auto 100%; }
+  .ks-trail .mock { grid-column: 1; width: 76%; justify-self: center; }
+  .cmp-svg { width: 160%; left: -30%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .cmp-ring, .js .cmp-tri, .js .cmp-txt, .js .ks-hero .cover-logo { transition: none; stroke-dashoffset: 0; opacity: 1; transform: none; }
+  .js .ks-hero .cover-logo { transform: translate(-50%, -50%); }
+}
+
+/* Testimonials (home, under Selected work): a short band. Small uppercase label; each slide is the client (round photo, name, role) on the left and the quote on the right with an Instrument Serif mark. Sideways slider, one quote per slide. */
+.tst { background: var(--cream); color: var(--ink); padding: clamp(56px, 5.2vw, 100px) 0 clamp(64px, 6vw, 116px); }
+.tst-h { margin: 0 0 clamp(16px, 2.4vw, 46px); text-align: center; font-family: var(--sans); font-weight: 400; font-size: clamp(15px, 1.34vw, 26px); line-height: 1.2; letter-spacing: .12em; text-transform: uppercase; }
+.tst-box { position: relative; }
+/* Headroom inside the slider so the tall quote mark is never clipped */
+.tst-track { padding-top: clamp(24px, 3.2vw, 62px); display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; overscroll-behavior-x: contain; outline: none; cursor: grab; }
+.tst-track::-webkit-scrollbar { display: none; }
+.tst-track.dragging { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; user-select: none; }
+.tst-track:focus-visible { box-shadow: 0 0 0 2px var(--orange); border-radius: 4px; }
+.tst-slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; padding: 0 6.5%; box-sizing: border-box; clip-path: inset(-50% 0); display: grid; grid-template-columns: minmax(0, 24%) minmax(0, 1fr); column-gap: clamp(24px, 4.4vw, 84px); align-items: start; }
+.tst-who { display: flex; flex-direction: column; gap: clamp(28px, 3.7vw, 70px); padding-top: .2em; }
+.tst-face { display: block; width: clamp(96px, 8.6vw, 164px); height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: cover; -webkit-user-drag: none; }
+.tst-meta { display: flex; flex-direction: column; font-size: clamp(15px, 1.34vw, 26px); line-height: 1.45; }
+.tst-name { font-weight: 700; }
+.tst-meta a { border-bottom: 1px solid transparent; transition: border-color .3s; }
+.tst-meta a:hover { border-color: currentColor; }
+.tst-body { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(14px, 1.9vw, 36px); align-items: start; }
+.tst-mark { display: block; height: .32em; margin-top: -.075em; font-family: var(--serif); font-size: clamp(150px, 18.4vw, 353px); line-height: .9; letter-spacing: 0; user-select: none; }
+.tst-q { margin: 0; padding-top: clamp(6px, .9vw, 17px); }
+.tst-q p { margin: 0; font-size: clamp(16px, 1.34vw, 26px); line-height: 1.83; text-wrap: pretty; }
+/* Arrows sit in the side margins, level with the quote */
+.tst-btn { position: absolute; top: 50%; padding: 0; border: 0; cursor: pointer; transform: translateY(-50%); }
+.tst-btn[hidden] { display: none; }
+.tst-next { right: 0; }
+.tst-prev { left: 0; }
+.tst-prev svg { transform: scaleX(-1); }
+.tst-next:hover svg { transform: translateX(5px); }
+.tst-prev:hover svg { transform: scaleX(-1) translateX(5px); }
+.tst-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 900px) {
+  /* Phone: label, mark, quote, then the client as a row (photo beside name and role); arrows under the quote, on the right */
+  .tst-h { font-size: 14px; }
+  .tst-box { margin-inline: -4px; padding-bottom: 68px; }
+  .tst-slide { padding: 0 4px; grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+  .tst-body { order: 1; grid-template-columns: minmax(0, 1fr); }
+  .tst-who { order: 2; flex-direction: row; align-items: center; gap: 16px; padding-top: 0; }
+  .tst-face { width: 64px; }
+  .tst-meta { font-size: 15px; }
+  .tst-mark { font-size: 150px; height: .3em; margin-top: 0; }
+  .tst-q { padding-top: 8px; }
+  .tst-q p { font-size: clamp(16px, 2.35vw, 18px); line-height: 1.8; }
+  .tst-btn { top: auto; bottom: 0; transform: none; --cw: 48px; margin-right: 4px; }
+  .tst-prev { left: auto; right: 60px; }
+  .tst-box:has(.tst-next[hidden]) .tst-prev { right: 0; }
+}
