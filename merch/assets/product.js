@@ -30,7 +30,7 @@ interestEl.innerHTML = '<p class="eyebrow">Register your interest</p>'
   + '<label class="check"><input type="checkbox" name="optin"> Email me about future Elida merch drops</label>'
   + '<p class="err" data-ferr role="alert"></p>'
   + '<button class="pill fill add" type="submit" data-send>Send</button>'
-  + '<p class="note">No payment now. We only email you about this tee, and future drops if you tick the box.</p>';
+  + '<p class="note">No payment now. We only email you about this tee, and future drops if you tick the box. <a href="https://helloelida.com/privacy">Privacy policy</a></p>';
 var pickEl = interestEl.querySelector("[data-pick]");
 var ferrEl = interestEl.querySelector("[data-ferr]");
 var sendBtn = interestEl.querySelector("[data-send]");

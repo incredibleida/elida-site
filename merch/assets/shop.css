@@ -286,3 +286,7 @@ button { font: inherit; color: inherit; }
 /* Prices hidden until the cost estimate is in */
 .card-price.tbc { font-size: 14px; color: var(--muted); }
 .pdp-price.tbc { font-size: 17px; color: var(--muted); }
+
+/* Privacy links */
+.note a, .foot-link { text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+.note a:hover, .foot-link:hover { color: var(--ink); }
